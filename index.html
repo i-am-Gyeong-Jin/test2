@@ -1,0 +1,2439 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>안전NOW | 가격 안내</title>
+
+<link rel="stylesheet" as="style" crossorigin="" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { pretendard: ['"Pretendard Variable"', 'Pretendard', '-apple-system', 'sans-serif'] },
+        colors: {
+          brand: {50:'#EFF6FF',100:'#DBEAFE',200:'#BFDBFE',300:'#93C5FD',400:'#60A5FA',500:'#3B82F6',600:'#2563EB',700:'#1D4ED8',800:'#1E40AF',900:'#1E3A8A'},
+          accent: {500:'#F97316',600:'#EA580C'},
+          ink: {900:'#0F172A',700:'#334155',500:'#64748B',300:'#CBD5E1',100:'#F1F5F9',50:'#F8FAFC'}
+        },
+        boxShadow: {
+          'card': '0 4px 24px -4px rgba(15, 23, 42, 0.08), 0 2px 8px -2px rgba(15, 23, 42, 0.04)',
+          'card-hover': '0 12px 32px -8px rgba(30, 64, 175, 0.18), 0 4px 12px -2px rgba(15, 23, 42, 0.08)',
+          'cta': '0 8px 24px -4px rgba(249, 115, 22, 0.35)'
+        }
+      }
+    }
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Pretendard Variable', Pretendard, sans-serif; -webkit-font-smoothing: antialiased; }
+  .hero-bg {
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 10%, rgba(59, 130, 246, 0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 70% 50% at 85% 30%, rgba(249, 115, 22, 0.08) 0%, transparent 60%),
+      linear-gradient(180deg, #F8FAFC 0%, #EFF6FF 100%);
+  }
+  /* Slider 커스텀 */
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(to right, #2563EB 0%, #2563EB 50%, #E2E8F0 50%, #E2E8F0 100%);
+    border-radius: 999px;
+    outline: none;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: white;
+    border: 4px solid #2563EB;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    transition: transform .15s ease;
+  }
+  input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.1); }
+  input[type="range"]::-moz-range-thumb {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: white;
+    border: 4px solid #2563EB;
+    cursor: pointer;
+  }
+  .pricing-recommended::before {
+    content: '';
+    position: absolute; inset: -2px; border-radius: 20px;
+    background: linear-gradient(135deg, #3B82F6, #F97316);
+    z-index: -1;
+  }
+  #mobile-menu-backdrop.is-open { opacity: 1; visibility: visible; }
+  #mobile-side-menu.is-open { transform: translateX(0); }
+  body.menu-open { overflow: hidden; }
+</style>
+
+<style id="tw-injected-styles" data-tw="styles">
+  /* ========== Tweaks UI 스타일 (Design Lock 포함) ========== */
+  #app-shell { transition: margin-right .35s cubic-bezier(.4,0,.2,1); }
+  body.tw-desc-open #app-shell { margin-right: min(500px, 44vw); }
+  @media (max-width: 640px) { body.tw-desc-open #app-shell { margin-right: 0; } }
+
+  /* Tweaks 바 */
+  #tw-bar {
+    position: fixed; bottom: 16px; right: 16px; z-index: 9999;
+    display: flex; align-items: center; gap: 4px;
+    padding: 6px; background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    border-top-left-radius: 14px; border-top-right-radius: 14px;
+    border-bottom-left-radius: 14px; border-bottom-right-radius: 14px;
+    box-shadow: 0 8px 28px -6px rgba(15,23,42,.18), 0 2px 8px -2px rgba(15,23,42,.08);
+    font-family: 'Pretendard Variable', Pretendard, -apple-system, sans-serif;
+    transition: right .35s cubic-bezier(.4,0,.2,1);
+  }
+  .tw-btn {
+    appearance: none; border: 0; background: transparent;
+    padding: 8px 12px; border-radius: 10px;
+    font-size: 13px; font-weight: 600; color: #334155;
+    cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+    transition: background .12s, color .12s;
+  }
+  .tw-btn:hover { background: #f1f5f9; color: #0f172a; }
+  .tw-btn.is-active { background: #1d4ed8; color: #ffffff; }
+  .tw-btn:disabled { opacity: .4; cursor: not-allowed; }
+  .tw-sep { width: 1px; height: 22px; background: #e2e8f0; margin: 0 2px; }
+  @media (max-width: 640px) { .tw-btn .tw-label { display: none; } #tw-bar { padding: 5px; gap: 2px; } .tw-btn { padding: 8px; } }
+
+  /* Description 패널 */
+  #tw-desc-panel {
+    position: fixed; top: 0; right: 0; height: 100vh; z-index: 9998;
+    width: min(500px, 44vw);
+    background: #ffffff; border-left: 1px solid #e2e8f0;
+    box-shadow: -12px 0 32px -12px rgba(15,23,42,.12);
+    transform: translateX(100%); transition: transform .35s cubic-bezier(.4,0,.2,1);
+    display: flex; flex-direction: column;
+    font-family: 'Pretendard Variable', Pretendard, -apple-system, sans-serif;
+  }
+  #tw-desc-panel.is-open { transform: translateX(0); }
+  @media (max-width: 640px) {
+    #tw-desc-panel { width: 100vw; height: 92vh; top: auto; bottom: 0;
+      transform: translateY(100%); border-radius: 18px 18px 0 0; border-left: 0; border-top: 1px solid #e2e8f0; }
+    #tw-desc-panel.is-open { transform: translateY(0); }
+  }
+  #tw-desc-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 18px; border-bottom: 1px solid #e2e8f0; background: #f8fafc;
+  }
+  #tw-desc-header h3 { margin: 0; font-size: 15px; font-weight: 700; color: #0f172a; }
+  .tw-desc-actions { display: flex; align-items: center; gap: 4px; }
+  .tw-desc-action {
+    appearance: none; border: 0; background: transparent; padding: 6px 10px;
+    border-radius: 8px; font-size: 12px; font-weight: 600; color: #334155; cursor: pointer;
+  }
+  .tw-desc-action:hover { background: #e2e8f0; }
+  #tw-desc-meta { padding: 10px 18px; font-size: 11.5px; color: #64748b; border-bottom: 1px solid #e2e8f0; line-height: 1.6; }
+  #tw-desc-meta .tw-meta-field { display: inline-block; margin-right: 12px; }
+  #tw-desc-meta input { font: inherit; color: inherit; background: transparent; border: 1px dashed transparent; padding: 1px 4px; border-radius: 4px; width: auto; min-width: 60px; }
+  #tw-desc-meta.is-editing input { border-color: #cbd5e1; background: #ffffff; }
+
+  /* [K-2] 탭 영역 디자인 LOCK */
+  #tw-desc-tabs {
+    display: flex; flex-wrap: nowrap; gap: 4px;
+    padding: 10px 18px 0; margin: 0;
+    background-color: #ffffff; border-bottom: 1px solid #e2e8f0;
+    overflow-x: auto;
+  }
+  .tw-desc-tab {
+    display: flex; flex-direction: column; gap: 2px;
+    padding: 8px 14px; min-width: 100px;
+    background-color: #ffffff; border: 0;
+    border-radius: 8px 8px 0 0; border-bottom: 2px solid #2563eb;
+    color: #1d4ed8; font-size: 12px; font-weight: 600; line-height: 15.6px;
+    cursor: pointer; transition: .15s;
+  }
+  .tw-desc-tab .tw-tab-id { font-size: 10px; font-weight: 500; color: #3b82f6; line-height: 13px; }
+  .tw-desc-tab .tw-desc-tab-name { font-size: 12px; font-weight: 700; color: #1d4ed8; line-height: 15.6px; }
+  .tw-desc-tab:hover { background-color: #f1f5f9; }
+  .tw-tab-add { min-width: 36px; padding: 8px 10px; color: #64748b; }
+  .tw-tab-add .tw-desc-tab-name { color: #64748b; }
+
+  /* Description 본문 */
+  #tw-desc-body { flex: 1; overflow-y: auto; padding: 16px 18px 24px; font-size: 13px; color: #0f172a; }
+  #tw-desc-body h4 { font-size: 13.5px; font-weight: 700; margin: 18px 0 8px; color: #0f172a; }
+  #tw-desc-body h4:first-child { margin-top: 0; }
+  #tw-desc-body h5 { font-size: 12.5px; font-weight: 700; margin: 14px 0 6px; color: #1d4ed8; }
+  #tw-desc-body p { margin: 0 0 8px; line-height: 1.65; color: #334155; }
+  #tw-desc-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 6px; table-layout: fixed; }
+  #tw-desc-body th, #tw-desc-body td {
+    border: 1px solid #e2e8f0; padding: 6px 8px; vertical-align: top;
+    word-break: break-word; line-height: 1.55;
+  }
+  #tw-desc-body th { background: #f1f5f9; font-weight: 700; color: #1d4ed8; text-align: left; }
+  #tw-desc-body td:first-child { background: #f8fafc; font-weight: 600; color: #1d4ed8; width: 30%; }
+  #tw-desc-body table[data-grid="multi"] td:first-child { background: transparent; font-weight: 400; color: #0f172a; width: auto; }
+  #tw-desc-body table[data-grid="multi"] th { color: #1d4ed8; }
+  #tw-desc-body.is-editing td, #tw-desc-body.is-editing th { outline: 1px dashed transparent; }
+  #tw-desc-body.is-editing [contenteditable="true"]:hover { outline-color: #cbd5e1; }
+  #tw-desc-body.is-editing [contenteditable="true"]:focus { outline: 1px solid #2563eb; background: #eff6ff; }
+  .tw-row-tools { display: flex; gap: 4px; margin-top: 4px; }
+  .tw-row-tools button { appearance: none; border: 1px solid #cbd5e1; background: #ffffff; padding: 3px 8px; border-radius: 6px; font-size: 11px; font-weight: 600; color: #334155; cursor: pointer; }
+  .tw-row-tools button:hover { background: #f1f5f9; }
+  .tw-section-tools { display: flex; gap: 6px; margin: 6px 0 4px; }
+  .tw-edit-controls { position: sticky; bottom: 0; background: #ffffff; padding: 10px 0 0; margin-top: 14px; border-top: 1px solid #e2e8f0; display: none; gap: 8px; }
+  #tw-desc-body.is-editing .tw-edit-controls { display: flex; }
+  .tw-edit-controls button { appearance: none; border: 1px solid #cbd5e1; background: #ffffff; padding: 8px 14px; border-radius: 8px; font-size: 12.5px; font-weight: 700; cursor: pointer; }
+  .tw-edit-controls .tw-btn-save { background: #2563eb; color: #ffffff; border-color: #2563eb; }
+  .tw-edit-controls .tw-btn-save:hover { background: #1d4ed8; }
+  .tw-edit-controls .tw-btn-cancel:hover { background: #f1f5f9; }
+
+  /* 오류 UI */
+  .tw-desc-error { padding: 28px 18px; text-align: center; }
+  .tw-desc-error .tw-err-icon { font-size: 32px; margin-bottom: 8px; }
+  .tw-desc-error h4 { font-size: 14px; font-weight: 700; color: #b91c1c; margin: 0 0 10px; }
+  .tw-desc-error pre {
+    white-space: pre-wrap; word-break: break-word;
+    background: #fef2f2; border: 1px solid #fecaca; color: #7f1d1d;
+    border-radius: 8px; padding: 10px 12px; font-size: 11.5px; text-align: left;
+    font-family: inherit; margin: 0 0 14px;
+  }
+  .tw-desc-error .tw-err-actions { display: flex; flex-direction: column; gap: 8px; }
+  .tw-desc-error .tw-err-actions button {
+    appearance: none; border: 1px solid #cbd5e1; background: #ffffff;
+    padding: 9px 12px; border-radius: 8px; font-size: 12.5px; font-weight: 700;
+    color: #334155; cursor: pointer;
+  }
+  .tw-desc-error .tw-err-actions button:hover { background: #f1f5f9; }
+
+  /* I/O 패널 */
+  #tw-export-panel {
+    position: fixed; right: 16px; bottom: 70px; z-index: 9997;
+    width: 320px; background: #ffffff; border: 1px solid #e2e8f0;
+    border-radius: 14px; box-shadow: 0 12px 32px -8px rgba(15,23,42,.18);
+    display: none; flex-direction: column; overflow: hidden;
+    font-family: 'Pretendard Variable', Pretendard, -apple-system, sans-serif;
+  }
+  #tw-export-panel.is-open { display: flex; }
+  @media (max-width: 640px) { #tw-export-panel { width: calc(100vw - 32px); left: 16px; right: 16px; } }
+  .tw-ex-header { display: flex; align-items: center; justify-content: space-between; padding: 12px 16px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; font-weight: 700; font-size: 13.5px; color: #0f172a; }
+  .tw-ex-close { appearance: none; border: 0; background: transparent; font-size: 16px; cursor: pointer; color: #64748b; padding: 2px 6px; border-radius: 6px; }
+  .tw-ex-close:hover { background: #e2e8f0; }
+  .tw-ex-body { padding: 12px 14px; display: flex; flex-direction: column; gap: 10px; }
+  .tw-ex-section-label { font-size: 11px; font-weight: 700; color: #64748b; letter-spacing: .03em; margin: 2px 2px -2px; }
+  .tw-ex-body button.tw-ex-action {
+    appearance: none; border: 1px solid #cbd5e1; background: #ffffff;
+    padding: 9px 12px; border-radius: 9px; font-size: 12.5px; font-weight: 600;
+    color: #0f172a; cursor: pointer; text-align: left;
+  }
+  .tw-ex-body button.tw-ex-action:hover { background: #f1f5f9; border-color: #94a3b8; }
+
+  /* Toast */
+  #tw-toast {
+    position: fixed; left: 50%; bottom: 90px; transform: translateX(-50%) translateY(8px);
+    background: rgba(15,23,42,.92); color: #ffffff; padding: 9px 16px; border-radius: 10px;
+    font-size: 12.5px; font-weight: 600; opacity: 0; pointer-events: none; z-index: 10000;
+    transition: opacity .18s, transform .18s; font-family: 'Pretendard Variable', sans-serif;
+  }
+  #tw-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* Edit 모드 — 인라인 팝오버 */
+  body.tw-mode-edit .tw-elem-hover { outline: 2px dashed #2563eb; outline-offset: 1px; cursor: pointer; }
+  body.tw-mode-edit .tw-elem-editing { outline: 2px solid #2563eb; outline-offset: 1px; }
+  #tw-popover {
+    position: absolute; z-index: 10001; display: none;
+    background: #0f172a; color: #ffffff;
+    border-radius: 10px; padding: 4px; align-items: center; gap: 2px;
+    box-shadow: 0 12px 32px -8px rgba(0,0,0,.4);
+    font-family: 'Pretendard Variable', sans-serif; font-size: 12px;
+  }
+  #tw-popover.is-open { display: inline-flex; }
+  #tw-popover .tw-pop-tag { padding: 4px 10px; font-weight: 700; color: #93c5fd; font-size: 11px; border-right: 1px solid #334155; margin-right: 4px; }
+  #tw-popover button {
+    appearance: none; border: 0; background: transparent; color: #f1f5f9;
+    padding: 5px 8px; border-radius: 6px; font-size: 12px; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 3px;
+  }
+  #tw-popover button:hover { background: #1e293b; }
+  #tw-popover button:disabled { opacity: .35; cursor: not-allowed; }
+  @media (max-width: 640px) { #tw-popover .tw-pop-label { display: none; } }
+
+  /* Color / Link sub-panel */
+  #tw-color-panel, #tw-link-panel {
+    position: absolute; z-index: 10002; display: none;
+    background: #ffffff; border: 1px solid #e2e8f0;
+    border-radius: 12px; padding: 12px;
+    box-shadow: 0 12px 32px -8px rgba(15,23,42,.2);
+    font-family: 'Pretendard Variable', sans-serif; font-size: 12px;
+    min-width: 200px; max-width: 320px;
+  }
+  #tw-color-panel.is-open, #tw-link-panel.is-open { display: block; }
+  .tw-color-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+  .tw-color-swatch { width: 28px; height: 28px; border-radius: 6px; border: 2px solid #e2e8f0; cursor: pointer; padding: 0; }
+  .tw-color-swatch.is-active { border-color: #0f172a; }
+  .tw-color-footer { margin-top: 10px; display: flex; gap: 6px; }
+  .tw-color-footer button { flex: 1; appearance: none; border: 1px solid #cbd5e1; background: #ffffff; padding: 6px; border-radius: 6px; font-size: 11.5px; cursor: pointer; font-weight: 600; }
+  .tw-color-footer button:hover { background: #f1f5f9; }
+  #tw-link-panel .tw-link-preview { background: #f1f5f9; border-radius: 6px; padding: 5px 8px; font-size: 11px; color: #1d4ed8; margin-bottom: 8px; word-break: break-all; }
+  .tw-link-tabs { display: flex; gap: 4px; margin-bottom: 8px; }
+  .tw-link-tab { flex: 1; appearance: none; border: 1px solid #cbd5e1; background: #ffffff; padding: 5px; border-radius: 6px; font-size: 11px; cursor: pointer; }
+  .tw-link-tab.is-active { background: #1d4ed8; color: #ffffff; border-color: #1d4ed8; }
+  .tw-link-body input { width: 100%; box-sizing: border-box; border: 1px solid #cbd5e1; border-radius: 6px; padding: 6px 8px; font-size: 12px; font: inherit; font-size: 12px; }
+  .tw-link-footer { margin-top: 8px; display: flex; gap: 6px; justify-content: flex-end; }
+  .tw-link-footer button { appearance: none; border: 1px solid #cbd5e1; background: #ffffff; padding: 5px 10px; border-radius: 6px; font-size: 11.5px; font-weight: 600; cursor: pointer; }
+  .tw-link-footer .tw-link-save { background: #2563eb; color: #ffffff; border-color: #2563eb; }
+
+  body.tw-mode-edit { padding-bottom: 4px; }
+  @media (max-width: 640px) { body { padding-bottom: 80px; } }
+</style>
+
+<!-- PDF Export 라이브러리 (제출용 PDF 생성용) -->
+<!-- html2canvas + jsPDF 를 각각 별도 CDN으로 로드 — html2pdf 번들이 내부 라이브러리들을
+     전역으로 노출하지 않는 경우가 있어 통합 번들 대신 개별 로드 방식 채택 -->
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+
+<script id="tw-baked-script" data-tw="baked">
+window.__BAKED_SPEC__ = {"meta":{"projectName":"안전NOW | 가격 안내","date":"2026-05-12","author":"이경진","version":"v1.0.0"},"screens":[{"id":"SCR-001","name":"가격 안내","basicInfo":[["화면 ID","SCR-001"],["화면명","가격 안내"],["URL Path","/pricing"],["진입 경로","GNB \u003e 가격 안내"],["이전 화면","사용자가 직전에 머무르던 임의 화면 — 진입 경로 제한 없음"],["이후 화면","무료 체험 신청 / 도입 문의 / 시작하기(회원가입) 등 사용자 선택에 따라 분기"]],"purpose":"안전NOW 도입을 검토 중인 잠재 고객이 자사 근로자 규모에 맞는 요금제를 직관적으로 확인하고, 도입 혜택과 타사 대비 차별점을 한눈에 비교한 뒤 무료 체험·도입 문의·시작하기 동선으로 자연스럽게 이어가도록 돕는다.","access":{"headers":["접근 가능 사용자","예외 처리"],"rows":[["전체 방문자 (비로그인 포함)","별도 인증 없이 누구나 열람 가능"]]},"components":{"headers":["컴포넌트명","타입","노출 필수","입력 필수","유효성 조건","비고"],"rows":[["페이지 헤드라인","타이틀","Y","—","—","\u0027규모에 딱 맞는 합리적인 가격\u0027 헤드라인과 보조 안내 문구 노출"],["Hero CTA 버튼","버튼 묶음","Y","—","—","무료 체험 신청·도입 문의 두 종 노출"],["근로자 수 슬라이더","범위 선택 슬라이더","Y","—","8개 구간 중 1개 선택","1~30 / 31~50 / 51~100 / 101~200 / 201~300 / 301~500 / 501~999 / 1000+ 구간으로 분할"],["선택 구간 표시","라벨","Y","—","—","현재 선택된 근로자 수 구간을 강조 노출"],["요금제 카드","가격 카드 묶음","Y","—","—","소기업·스타트업 / 중소기업 / 중견·대기업 3종, 선택 구간에 따라 한 카드가 강조됨"],["요금제 CTA","버튼","Y","—","—","카드별 무료 체험 신청·시작하기·도입 문의 버튼 노출"],["도입 혜택 카드","혜택 카드 묶음","Y","—","—","신규 고객 할인·장기 계약 할인·다수 사업장 할인 3종 노출"],["타사 비교 표","비교 표","Y","—","—","안전NOW와 타 서비스 3사를 기능 단위로 비교"],["Footer CTA","버튼·링크 모음","Y","—","—","무료 체험 신청·도입 문의로 이어지는 후속 동선 제공"]]},"features":[{"title":"5-1. 근로자 수 구간 선택","headers":["항목","내용"],"rows":[["선택 방식","슬라이더를 좌우로 이동해 8개 구간 중 1개 선택"],["완료 처리","선택한 구간 라벨이 상단에 즉시 반영되고, 슬라이더 트랙 채움 비율도 함께 갱신"],["기본 상태","페이지 진입 시 가장 작은 구간(1~30명)이 기본 선택"],["연계 동선","선택 구간에 따라 추천 요금제 카드와 표시 가격이 자동 갱신"]]},{"title":"5-2. 추천 요금제 카드 강조","headers":["항목","내용"],"rows":[["진입 방식","근로자 수 구간을 변경할 때마다 자동 갱신"],["완료 처리","선택 구간이 속한 카드 한 종이 강조 스타일로 표시되고, 나머지 두 카드는 보조 스타일로 전환"],["연계 동선","각 카드 하단의 무료 체험 신청·시작하기 버튼 클릭 시 무료 체험 신청 화면 또는 회원가입 화면으로 이동"]]},{"title":"5-3. 요금제별 가격·조건 자동 갱신","headers":["항목","내용"],"rows":[["진입 방식","근로자 수 구간 변경에 따라 자동 갱신"],["완료 처리","각 카드의 월 사용료와 근로자 한도 안내가 선택 구간에 맞게 갱신, 가격은 모두 VAT 별도 기준으로 표기"],["예외 처리","1000명 초과 구간 선택 시 중견·대기업 카드는 가격 대신 \u0027별도 문의\u0027 표기, CTA 버튼도 \u0027도입 문의하기\u0027로 전환되며 근로자 한도 안내가 \u0027근로자 무제한\u0027으로 변경"]]},{"title":"5-4. 도입 혜택 안내","headers":["항목","내용"],"rows":[["노출 방식","신규 고객 할인·장기 계약 할인·다수 사업장 할인 3종 카드를 가로 정렬로 노출"],["완료 처리","각 카드별 최대 할인율과 적용 조건을 짧은 안내 문구로 함께 표기"],["연계 동선","혜택 안내 자체는 정보성 영역이며, 적용은 도입 문의 또는 영업 상담 단계에서 안내됨"]]},{"title":"5-5. 타사 서비스 비교","headers":["항목","내용"],"rows":[["노출 방식","안전NOW와 타사 3종을 가로 비교하는 표를 노출, 행마다 제공 기능 1건을 비교"],["완료 처리","기능별 제공 여부는 제공·미제공·강조 제공 3단계 아이콘으로 구분 표기"],["연계 동선","표는 정보성 영역이며 별도의 후속 동선 없이 다음 섹션·Footer CTA로 자연스럽게 이어짐"]]},{"title":"5-6. 후속 동선 유도","headers":["항목","내용"],"rows":[["진입 방식","Hero·요금제 카드·Footer 영역의 무료 체험 신청·도입 문의·시작하기 버튼 클릭"],["연계 동선","무료 체험 신청 화면, 도입 문의 화면, 회원가입(시작하기) 화면 중 사용자가 선택한 화면으로 이동"]]}],"commonPolicy":{"headers":["항목","내용"],"rows":[["가격 표기 정책","모든 가격은 월 사용료 기준이며 VAT 별도, 통화는 원화로 표기"],["외부 링크 정책","GNB·Footer의 약관·개인정보 처리방침 등 외부 도메인 링크는 새 창으로 열기"],["접근성","키보드만으로 슬라이더 구간 변경과 카드별 CTA 진입이 가능해야 함"],["반응형 정책","데스크탑은 카드 가로 3열, 모바일은 세로 1열로 자동 전환되어 가독성을 유지"],["데이터 보존","가격 안내는 정적 안내 콘텐츠로 사용자 입력·세션 데이터를 수집·보관하지 않음"]]}}]};
+window.__IS_SHARE__ = false;
+</script>
+
+<script id="tw-injected-script" data-tw="script">
+(function () {
+  'use strict';
+
+  const FILE_KEY = 'PRC';
+  const PROJECT_NAME = '안전NOW | 가격 안내';
+  const isShare = !!window.__IS_SHARE__;
+  const BRAND_PALETTE = [
+    '#EFF6FF', '#DBEAFE', '#BFDBFE', '#93C5FD', '#60A5FA',
+    '#3B82F6', '#2563EB', '#1D4ED8', '#1E40AF', '#1E3A8A',
+    '#F97316', '#EA580C', '#0F172A', '#334155', '#FFFFFF'
+  ];
+
+  const DEFAULT_SPEC = {
+    meta: { projectName: PROJECT_NAME, date: '2026-05-12', author: '이경진', version: 'v1.0.0' },
+    screens: []
+  };
+
+  let spec = JSON.parse(JSON.stringify(DEFAULT_SPEC));
+  let currentScr = null;
+  let currentMode = 'prototype';
+  let descLoadError = null;
+  let editingDesc = false;
+  let undoStack = [];
+  let toastTimer = null;
+  let activeEl = null;
+
+  /* ---------- helpers ---------- */
+  function $(id) { return document.getElementById(id); }
+  function ce(tag, props) { const el = document.createElement(tag); if (props) Object.assign(el, props); return el; }
+  function isInTweaksUI(el) { return !!(el && el.closest && el.closest('[data-tw]')); }
+  function showToast(msg) {
+    const t = $('tw-toast'); if (!t) return;
+    t.textContent = msg; t.classList.remove('show'); void t.offsetWidth; t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => { t.classList.remove('show'); toastTimer = null; }, 2500);
+  }
+  function clearToast() { const t = $('tw-toast'); if (!t) return; t.classList.remove('show'); clearTimeout(toastTimer); toastTimer = null; }
+
+  function downloadFile(name, content, mime) {
+    const a = ce('a');
+    a.href = URL.createObjectURL(new Blob([content], { type: mime }));
+    a.download = name; a.setAttribute('data-tw', 'dl-anchor'); a.style.display = 'none';
+    document.body.appendChild(a); a.click();
+    setTimeout(() => { a.remove(); URL.revokeObjectURL(a.href); }, 1000);
+  }
+
+  /* ---------- spec validation ---------- */
+  function asStr(v, fallback) { return (typeof v === 'string') ? v : (fallback != null ? fallback : ''); }
+  function asArr(v) { return Array.isArray(v) ? v : []; }
+  function asTable(t, defaultHeaders) {
+    const headers = asArr(t && t.headers).length ? t.headers.map(h => asStr(h)) : (defaultHeaders || []);
+    const rows = asArr(t && t.rows).map(r => asArr(r).map(c => asStr(c)));
+    return { headers, rows };
+  }
+  function validateSpec(raw) {
+    const data = (raw && typeof raw === 'object') ? raw : {};
+    const meta = data.meta || {};
+    const out = {
+      meta: {
+        projectName: asStr(meta.projectName, PROJECT_NAME),
+        date: asStr(meta.date, ''),
+        author: asStr(meta.author, ''),
+        version: asStr(meta.version, 'v1.0.0')
+      },
+      screens: []
+    };
+    const rawScreens = asArr(data.screens);
+    out.screens = rawScreens.map((s, i) => ({
+      id: asStr(s.id, 'SCR-' + String(i + 1).padStart(3, '0')),
+      name: asStr(s.name, '화면 ' + (i + 1)),
+      basicInfo: asArr(s.basicInfo).map(r => asArr(r).map(c => asStr(c))),
+      purpose: asStr(s.purpose, ''),
+      access: asTable(s.access, ['접근 가능 사용자', '예외 처리']),
+      components: asTable(s.components, ['컴포넌트명', '타입', '노출 필수', '입력 필수', '유효성 조건', '비고']),
+      features: asArr(s.features).map((f, j) => ({
+        title: asStr(f.title, '5-' + (j + 1) + '. 기능'),
+        headers: asArr(f.headers).length ? f.headers.map(h => asStr(h)) : ['항목', '내용'],
+        rows: asArr(f.rows).map(r => asArr(r).map(c => asStr(c)))
+      })),
+      commonPolicy: asTable(s.commonPolicy, ['항목', '내용'])
+    }));
+    if (!out.screens.length) {
+      out.screens.push({
+        id: 'SCR-001', name: '화면 1', basicInfo: [], purpose: '',
+        access: { headers: ['접근 가능 사용자', '예외 처리'], rows: [] },
+        components: { headers: ['컴포넌트명', '타입', '노출 필수', '입력 필수', '유효성 조건', '비고'], rows: [] },
+        features: [], commonPolicy: { headers: ['항목', '내용'], rows: [] }
+      });
+    }
+    return out;
+  }
+  function serializeSpec(s) { return JSON.stringify(s, null, 2); }
+
+  /* ---------- spec / prototype loading ---------- */
+  function loadSpec() {
+    descLoadError = null;
+    if (isShare) {
+      if (!window.__BAKED_SPEC__) {
+        descLoadError = { message: '공유용 HTML 안에 baked-in spec이 없습니다.', detail: '원본 planner에서 다시 Export 해주세요.' };
+        return Promise.resolve(JSON.parse(JSON.stringify(DEFAULT_SPEC)));
+      }
+      return Promise.resolve(validateSpec(window.__BAKED_SPEC__));
+    }
+    const isFileProto = (location.protocol === 'file:');
+    const url = './' + FILE_KEY + '_description.json?_=' + Date.now();
+    const p = isFileProto
+      ? Promise.reject(new Error('file:// 환경에서는 fetch가 차단됩니다'))
+      : fetch(url, { cache: 'no-store' }).then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); });
+    return p.then(data => validateSpec(data)).catch(err => {
+      descLoadError = {
+        message: 'JSON을 불러오는 중 오류가 발생했습니다.',
+        detail: isFileProto
+          ? 'file:// 환경에서는 외부 JSON 파일을 직접 불러올 수 없습니다.\n→ 📂 JSON 불러오기로 파일을 직접 선택하거나, 같은 폴더에서 HTTP 서버를 실행해주세요.\n  (예: python -m http.server 8080)'
+          : (FILE_KEY + '_description.json 파일을 찾을 수 없거나 형식이 올바르지 않습니다.\n→ ' + (err && err.message ? err.message : 'unknown error'))
+      };
+      return JSON.parse(JSON.stringify(DEFAULT_SPEC));
+    });
+  }
+
+  function applyPrototypeHTML(html) {
+    const shell = $('app-shell');
+    if (!shell || typeof html !== 'string' || !html.trim()) return false;
+    try {
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const extracted = doc.getElementById('app-shell');
+      if (extracted) shell.innerHTML = extracted.innerHTML;
+      else if (doc.body) shell.innerHTML = doc.body.innerHTML;
+      else shell.innerHTML = html;
+      saveDomSnapshot();
+      return true;
+    } catch (e) { console.error('apply prototype failed', e); return false; }
+  }
+  function loadPrototype() {
+    if (isShare) return Promise.resolve(false);
+    if (location.protocol === 'file:') return Promise.resolve(false);
+    const url = './' + FILE_KEY + '_prototype.html?_=' + Date.now();
+    return fetch(url, { cache: 'no-store' })
+      .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
+      .then(text => applyPrototypeHTML(text))
+      .catch(err => { console.warn('Prototype fetch failed', err && err.message); return false; });
+  }
+
+  /* ---------- DOM snapshot ---------- */
+  const SNAP_KEY = FILE_KEY + '_domSnapshots';
+  function saveDomSnapshot() {
+    const shell = $('app-shell'); if (!shell) return;
+    try { localStorage.setItem(SNAP_KEY, shell.innerHTML); } catch (e) {}
+  }
+  function restoreDomSnapshot() {
+    if (isShare) return false;
+    const shell = $('app-shell'); if (!shell) return false;
+    try {
+      const html = localStorage.getItem(SNAP_KEY);
+      if (html && html.length) { shell.innerHTML = html; return true; }
+    } catch (e) {}
+    return false;
+  }
+
+  /* ---------- baked script update ---------- */
+  function updateBakedScript() {
+    let s = $('tw-baked-script');
+    if (!s) {
+      s = ce('script'); s.id = 'tw-baked-script'; s.setAttribute('data-tw', 'baked');
+      const before = $('tw-injected-script');
+      (before ? before.parentNode : document.head).insertBefore(s, before || null);
+    }
+    const safeJson = JSON.stringify(spec).replace(/</g, '\\u003c').replace(/>/g, '\\u003e').replace(/&/g, '\\u0026');
+    s.textContent = 'window.__BAKED_SPEC__ = ' + safeJson + ';\nwindow.__IS_SHARE__ = ' + (isShare ? 'true' : 'false') + ';';
+  }
+
+  /* ---------- Tweaks markup ---------- */
+  function buildTweaksMarkup() {
+    if ($('tw-bar')) return;
+
+    /* Tweaks 바 */
+    const bar = ce('div'); bar.id = 'tw-bar'; bar.setAttribute('data-tw', 'bar');
+    bar.innerHTML =
+      '<button class="tw-btn is-active" id="tw-btn-prototype" data-tw="btn" type="button"><span>🖥️</span><span class="tw-label">Prototype</span></button>' +
+      '<button class="tw-btn" id="tw-btn-desc" data-tw="btn" type="button"><span>📄</span><span class="tw-label">Description</span></button>' +
+      (isShare ? '' :
+        '<button class="tw-btn" id="tw-btn-edit" data-tw="btn" type="button"><span>✏️</span><span class="tw-label">Edit</span></button>' +
+        '<button class="tw-btn" id="tw-undo" data-tw="btn" type="button" style="display:none" disabled><span>↶</span><span class="tw-label">Undo</span></button>' +
+        '<span class="tw-sep" data-tw="sep"></span>' +
+        '<button class="tw-btn" id="tw-btn-export" data-tw="btn" type="button"><span>🔄</span><span class="tw-label">I/O</span></button>'
+      );
+    document.body.appendChild(bar);
+
+    /* Description 패널 */
+    const dp = ce('div'); dp.id = 'tw-desc-panel'; dp.setAttribute('data-tw', 'desc-panel');
+    dp.innerHTML =
+      '<div id="tw-desc-header" data-tw="desc-header">' +
+        '<h3>Description</h3>' +
+        '<div class="tw-desc-actions" data-tw="desc-actions">' +
+          (isShare ? '' : '<button class="tw-desc-action" id="tw-desc-edit-btn" data-tw="btn" type="button">✏️ 편집</button>') +
+          '<button class="tw-desc-action" id="tw-desc-close" data-tw="btn" type="button">✕</button>' +
+        '</div>' +
+      '</div>' +
+      '<div id="tw-desc-meta" data-tw="desc-meta"></div>' +
+      '<div id="tw-desc-tabs" data-tw="desc-tabs"></div>' +
+      '<div id="tw-desc-body" data-tw="desc-body"></div>';
+    document.body.appendChild(dp);
+
+    /* I/O 패널 */
+    if (!isShare) {
+      const ep = ce('div'); ep.id = 'tw-export-panel'; ep.setAttribute('data-tw', 'export-panel');
+      ep.innerHTML =
+        '<div class="tw-ex-header" data-tw="ex-header"><span>🔄 I/O</span>' +
+          '<button class="tw-ex-close" id="tw-ex-close" data-tw="btn" type="button">✕</button></div>' +
+        '<div class="tw-ex-body" data-tw="ex-body">' +
+          '<div class="tw-ex-section-label">📤 Export</div>' +
+          '<button class="tw-ex-action" id="tw-ex-share" data-tw="btn" type="button">⬇️ 공유용 HTML 다운로드</button>' +
+          '<button class="tw-ex-action" id="tw-ex-prototype" data-tw="btn" type="button">🧩 Prototype HTML 다운로드</button>' +
+          '<button class="tw-ex-action" id="tw-ex-json" data-tw="btn" type="button">📄 Description JSON 다운로드</button>' +
+          '<button class="tw-ex-action" id="tw-ex-pdf" data-tw="btn" type="button">📑 제출용 PDF 다운로드</button>' +
+          '<div class="tw-ex-section-label" style="margin-top:8px">📥 Import</div>' +
+          '<button class="tw-ex-action" id="tw-load-html-btn" data-tw="btn" type="button">🧩 Prototype HTML 불러오기</button>' +
+          '<button class="tw-ex-action" id="tw-load-json-btn" data-tw="btn" type="button">📂 Description JSON 불러오기</button>' +
+          '<input type="file" id="tw-load-html-input" data-tw="file-input" accept=".html,text/html" style="display:none">' +
+          '<input type="file" id="tw-load-json-input" data-tw="file-input" accept=".json,application/json" style="display:none">' +
+        '</div>';
+      document.body.appendChild(ep);
+    }
+
+    /* Toast */
+    const toast = ce('div'); toast.id = 'tw-toast'; toast.setAttribute('data-tw', 'toast');
+    document.body.appendChild(toast);
+
+    if (!isShare) {
+      /* Popover */
+      const pop = ce('div'); pop.id = 'tw-popover'; pop.setAttribute('data-tw', 'popover');
+      pop.innerHTML =
+        '<span class="tw-pop-tag" data-tw="tag">TAG</span>' +
+        '<button data-tw="btn" data-act="edit"><span>✎</span><span class="tw-pop-label">편집</span></button>' +
+        '<button data-tw="btn" data-act="color"><span>🎨</span><span class="tw-pop-label">색상</span></button>' +
+        '<button data-tw="btn" data-act="link"><span>🔗</span><span class="tw-pop-label">링크</span></button>' +
+        '<button data-tw="btn" data-act="dup"><span>⎘</span><span class="tw-pop-label">복제</span></button>' +
+        '<button data-tw="btn" data-act="up"><span>↑</span></button>' +
+        '<button data-tw="btn" data-act="down"><span>↓</span></button>' +
+        '<button data-tw="btn" data-act="del"><span>🗑</span></button>' +
+        '<button data-tw="btn" data-act="close"><span>✕</span></button>';
+      document.body.appendChild(pop);
+
+      const cp = ce('div'); cp.id = 'tw-color-panel'; cp.setAttribute('data-tw', 'color-panel');
+      document.body.appendChild(cp);
+
+      const lp = ce('div'); lp.id = 'tw-link-panel'; lp.setAttribute('data-tw', 'link-panel');
+      document.body.appendChild(lp);
+    }
+  }
+
+  /* ---------- render: meta / tabs / body ---------- */
+  function renderMeta() {
+    const box = $('tw-desc-meta'); if (!box) return;
+    if (descLoadError) { box.style.display = 'none'; return; }
+    box.style.display = '';
+    const m = spec.meta || {};
+    if (editingDesc && !isShare) {
+      box.classList.add('is-editing');
+      box.innerHTML =
+        '<span class="tw-meta-field">프로젝트: <input data-tw="meta-input" data-key="projectName" value="' + escapeAttr(m.projectName) + '"></span> · ' +
+        '<span class="tw-meta-field">작성일: <input data-tw="meta-input" data-key="date" value="' + escapeAttr(m.date) + '"></span> · ' +
+        '<span class="tw-meta-field">작성자: <input data-tw="meta-input" data-key="author" value="' + escapeAttr(m.author) + '"></span> · ' +
+        '<span class="tw-meta-field">버전: <input data-tw="meta-input" data-key="version" value="' + escapeAttr(m.version) + '"></span>';
+    } else {
+      box.classList.remove('is-editing');
+      box.textContent = '프로젝트: ' + (m.projectName || '—') + ' · 작성일: ' + (m.date || '—') + ' · 작성자: ' + (m.author || '—') + ' · 버전: ' + (m.version || '—');
+    }
+  }
+
+  function renderTabs() {
+    const box = $('tw-desc-tabs'); if (!box) return;
+    if (descLoadError) { box.style.display = 'none'; return; }
+    box.style.display = '';
+    box.innerHTML = '';
+    const screens = spec.screens || [];
+    if (screens.length === 0) { box.style.display = 'none'; return; }
+    screens.forEach(s => {
+      const tab = ce('button');
+      tab.className = 'tw-desc-tab' + (s.id === currentScr ? ' is-active' : '');
+      tab.setAttribute('data-tw', 'tab');
+      tab.setAttribute('data-scr', s.id);
+      tab.innerHTML = '<span class="tw-tab-id">' + escapeText(s.id) + '</span><span class="tw-desc-tab-name">' + escapeText(s.name) + '</span>';
+      box.appendChild(tab);
+    });
+    if (editingDesc && !isShare) {
+      const addBtn = ce('button');
+      addBtn.className = 'tw-desc-tab tw-tab-add';
+      addBtn.setAttribute('data-tw', 'tab-add');
+      addBtn.innerHTML = '<span class="tw-tab-id">＋</span><span class="tw-desc-tab-name">화면</span>';
+      box.appendChild(addBtn);
+    }
+  }
+
+  function renderErrorUI() {
+    const body = $('tw-desc-body'); if (!body) return;
+    const e = descLoadError || { message: '오류', detail: '' };
+    body.innerHTML =
+      '<div class="tw-desc-error" data-tw="err-box">' +
+        '<div class="tw-err-icon">⚠️</div>' +
+        '<h4>' + escapeText(e.message) + '</h4>' +
+        '<pre>' + escapeText(e.detail || '') + '</pre>' +
+        '<div class="tw-err-actions">' +
+          (isShare ? '' : '<button data-tw="err-load" type="button">📂 JSON 불러오기</button>') +
+          '<button data-tw="err-reload" type="button">🔄 새로고침</button>' +
+        '</div>' +
+      '</div>';
+  }
+
+  function renderDescBody() {
+    const body = $('tw-desc-body'); if (!body) return;
+    if (descLoadError) { renderErrorUI(); return; }
+    const scr = (spec.screens || []).find(s => s.id === currentScr) || (spec.screens || [])[0];
+    if (!scr) { body.innerHTML = '<p style="color:#64748b">화면이 없습니다.</p>'; return; }
+
+    body.classList.toggle('is-editing', editingDesc && !isShare);
+
+    let html = '';
+
+    /* 1. 화면 기본 정보 */
+    html += '<h4>1. 화면 기본 정보</h4>';
+    html += renderKVTable(scr.basicInfo, 'basicInfo');
+
+    /* 2. 화면 목적 */
+    html += '<h4>2. 화면 목적</h4>';
+    if (editingDesc && !isShare) {
+      html += '<textarea data-tw-edit="purpose" style="width:100%;min-height:64px;border:1px solid #cbd5e1;border-radius:8px;padding:8px;font:inherit;font-size:13px;line-height:1.55;">' + escapeText(scr.purpose || '') + '</textarea>';
+    } else {
+      html += '<p>' + escapeText(scr.purpose || '—') + '</p>';
+    }
+
+    /* 3. 접근 권한 */
+    html += '<h4>3. 접근 권한</h4>';
+    html += renderMatrixTable(scr.access, 'access');
+
+    /* 4. 컴포넌트 정의 */
+    html += '<h4>4. 컴포넌트 정의</h4>';
+    html += renderMatrixTable(scr.components, 'components');
+
+    /* 5. 기능 명세 */
+    html += '<h4>5. 기능 명세</h4>';
+    (scr.features || []).forEach((f, idx) => {
+      html += '<h5>' + (editingDesc && !isShare
+        ? '<span contenteditable="true" data-tw-edit="feature-title" data-idx="' + idx + '">' + escapeText(f.title) + '</span>'
+        : escapeText(f.title)) + '</h5>';
+      html += renderMatrixTable(f, 'feature', idx);
+    });
+    if (editingDesc && !isShare) {
+      html += '<div class="tw-section-tools"><button data-tw-edit="add-feature" type="button">＋ 기능 섹션 추가</button></div>';
+    }
+
+    /* 6. 공통 정책 */
+    html += '<h4>6. 공통 정책</h4>';
+    html += renderMatrixTable(scr.commonPolicy, 'commonPolicy');
+
+    /* 편집 컨트롤 */
+    if (!isShare) {
+      html += '<div class="tw-edit-controls" data-tw="edit-controls">' +
+        '<button class="tw-btn-save" data-tw-edit="save" type="button">💾 저장</button>' +
+        '<button class="tw-btn-cancel" data-tw-edit="cancel" type="button">↩ 취소</button>' +
+        '</div>';
+    }
+
+    body.innerHTML = html;
+  }
+
+  function renderKVTable(rows, sectionKey) {
+    const ed = editingDesc && !isShare;
+    let html = '<table data-tw="table-kv" data-section="' + sectionKey + '"><tbody>';
+    (rows || []).forEach((r, idx) => {
+      const k = r[0] || '', v = r[1] || '';
+      html += '<tr>' +
+        '<td' + (ed ? ' contenteditable="true" data-tw-edit="cell" data-section="' + sectionKey + '" data-row="' + idx + '" data-col="0"' : '') + '>' + escapeText(k) + '</td>' +
+        '<td' + (ed ? ' contenteditable="true" data-tw-edit="cell" data-section="' + sectionKey + '" data-row="' + idx + '" data-col="1"' : '') + '>' + escapeText(v) + '</td>' +
+        '</tr>';
+    });
+    html += '</tbody></table>';
+    if (ed) {
+      html += '<div class="tw-row-tools">' +
+        '<button data-tw-edit="add-row" data-section="' + sectionKey + '" type="button">＋ 행 추가</button>' +
+        '<button data-tw-edit="del-row" data-section="' + sectionKey + '" type="button">– 마지막 행 삭제</button>' +
+        '</div>';
+    }
+    return html;
+  }
+
+  function renderMatrixTable(table, sectionKey, featureIdx) {
+    const t = table || { headers: [], rows: [] };
+    const ed = editingDesc && !isShare;
+    const sectionId = sectionKey + (featureIdx != null ? ':' + featureIdx : '');
+    let html = '<table data-tw="table-matrix" data-grid="multi" data-section="' + sectionId + '"><thead><tr>';
+    (t.headers || []).forEach((h, ci) => {
+      html += '<th' + (ed ? ' contenteditable="true" data-tw-edit="header" data-section="' + sectionId + '" data-col="' + ci + '"' : '') + '>' + escapeText(h) + '</th>';
+    });
+    html += '</tr></thead><tbody>';
+    (t.rows || []).forEach((r, ri) => {
+      html += '<tr>';
+      (t.headers || []).forEach((_, ci) => {
+        const v = r[ci] != null ? r[ci] : '';
+        html += '<td' + (ed ? ' contenteditable="true" data-tw-edit="cell" data-section="' + sectionId + '" data-row="' + ri + '" data-col="' + ci + '"' : '') + '>' + escapeText(v) + '</td>';
+      });
+      html += '</tr>';
+    });
+    html += '</tbody></table>';
+    if (ed) {
+      html += '<div class="tw-row-tools">' +
+        '<button data-tw-edit="add-row" data-section="' + sectionId + '" type="button">＋ 행 추가</button>' +
+        '<button data-tw-edit="del-row" data-section="' + sectionId + '" type="button">– 마지막 행 삭제</button>' +
+        (featureIdx != null ? '<button data-tw-edit="del-feature" data-idx="' + featureIdx + '" type="button">🗑 이 기능 섹션 삭제</button>' : '') +
+        '</div>';
+    }
+    return html;
+  }
+
+  function escapeText(s) {
+    return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+  function escapeAttr(s) {
+    return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  /* ---------- panel open/close ---------- */
+  function openDescPanel() {
+    if (descLoadError) renderErrorUI();
+    const p = $('tw-desc-panel'); if (!p) return;
+    p.classList.add('is-open');
+    document.body.classList.add('tw-desc-open');
+    renderMeta(); renderTabs(); renderDescBody();
+    syncBarOffset(true);
+    syncDescButtons();
+  }
+  function closeDescPanel() {
+    const p = $('tw-desc-panel'); if (!p) return;
+    p.classList.remove('is-open');
+    document.body.classList.remove('tw-desc-open');
+    syncBarOffset(false);
+    syncDescButtons();
+  }
+  function isDescOpen() { const p = $('tw-desc-panel'); return !!(p && p.classList.contains('is-open')); }
+  function syncDescButtons() {
+    const btn = $('tw-btn-desc'); if (btn) btn.classList.toggle('is-active', isDescOpen());
+  }
+
+  function syncBarOffset(panelOpen) {
+    const bar = $('tw-bar'); const ep = $('tw-export-panel');
+    if (!bar) return;
+    const isMobile = window.innerWidth <= 640;
+    if (isMobile) { bar.style.right = '16px'; if (ep) ep.style.right = '16px'; return; }
+    if (panelOpen) {
+      const w = Math.min(500, Math.round(window.innerWidth * 0.44));
+      bar.style.right = (w + 16) + 'px';
+      if (ep) ep.style.right = (w + 16) + 'px';
+    } else {
+      bar.style.right = '16px';
+      if (ep) ep.style.right = '16px';
+    }
+  }
+
+  /* ---------- mode switching ---------- */
+  function setMode(mode) {
+    clearToast();
+    currentMode = mode;
+    document.body.classList.remove('tw-mode-prototype', 'tw-mode-edit');
+    document.body.classList.add('tw-mode-' + mode);
+
+    const btnProto = $('tw-btn-prototype');
+    const btnEdit = $('tw-btn-edit');
+    const undoBtn = $('tw-undo');
+
+    if (btnProto) btnProto.classList.toggle('is-active', mode === 'prototype');
+    if (btnEdit) btnEdit.classList.toggle('is-active', mode === 'edit');
+    if (undoBtn) undoBtn.style.display = (mode === 'edit') ? '' : 'none';
+
+    if (mode !== 'edit') {
+      hidePopover(); hideColorPanel(); hideLinkPanel();
+      undoStack = []; refreshUndoBtn();
+      document.querySelectorAll('.tw-elem-hover, .tw-elem-editing').forEach(el => {
+        el.classList.remove('tw-elem-hover', 'tw-elem-editing');
+      });
+    }
+    if (mode === 'prototype') closeDescPanel();
+  }
+
+  /* ---------- Edit mode — popover ---------- */
+  let popoverEl = null;
+  let activeEditEl = null;
+
+  function isEditableTarget(el) {
+    if (!el || el === document.body || el === document.documentElement) return false;
+    if (isInTweaksUI(el)) return false;
+    if (!$('app-shell') || !$('app-shell').contains(el)) return false;
+    return true;
+  }
+  function showPopoverFor(el) {
+    const pop = $('tw-popover'); if (!pop) return;
+    activeEditEl = el;
+    document.querySelectorAll('.tw-elem-editing').forEach(x => x.classList.remove('tw-elem-editing'));
+    el.classList.add('tw-elem-editing');
+    const tagSpan = pop.querySelector('[data-tw="tag"]');
+    if (tagSpan) tagSpan.textContent = el.tagName.toLowerCase();
+    const isAnchor = el.tagName === 'A';
+    const linkBtn = pop.querySelector('[data-act="link"]'); if (linkBtn) linkBtn.style.display = isAnchor ? '' : 'none';
+    const rect = el.getBoundingClientRect();
+    pop.classList.add('is-open');
+    const top = Math.max(8, rect.top + window.scrollY - 44);
+    let left = rect.left + window.scrollX;
+    pop.style.top = top + 'px'; pop.style.left = left + 'px';
+    requestAnimationFrame(() => {
+      const pr = pop.getBoundingClientRect();
+      if (pr.right > window.innerWidth - 8) {
+        left = Math.max(8, window.innerWidth - pr.width - 8);
+        pop.style.left = left + 'px';
+      }
+    });
+    const upBtn = pop.querySelector('[data-act="up"]'); if (upBtn) upBtn.disabled = !el.previousElementSibling;
+    const downBtn = pop.querySelector('[data-act="down"]'); if (downBtn) downBtn.disabled = !el.nextElementSibling;
+  }
+  function hidePopover() {
+    const pop = $('tw-popover'); if (pop) pop.classList.remove('is-open');
+    document.querySelectorAll('.tw-elem-editing').forEach(x => x.classList.remove('tw-elem-editing'));
+    activeEditEl = null;
+  }
+
+  /* Undo */
+  function pushUndo(label, undoFn) {
+    undoStack.push({ label: label, fn: undoFn });
+    if (undoStack.length > 10) undoStack.shift();
+    refreshUndoBtn();
+  }
+  function refreshUndoBtn() {
+    const btn = $('tw-undo'); if (!btn) return;
+    btn.disabled = !undoStack.length;
+    btn.title = undoStack.length ? '되돌리기: ' + undoStack[undoStack.length - 1].label + ' (남은 단계 ' + undoStack.length + ')' : '';
+  }
+  function performUndo() {
+    if (!undoStack.length) return;
+    const item = undoStack.pop();
+    try { item.fn(); } catch (e) { console.error(e); }
+    refreshUndoBtn(); saveDomSnapshot();
+  }
+
+  /* Color panel */
+  function showColorPanelFor(el) {
+    const cp = $('tw-color-panel'); if (!cp) return;
+    const currentColor = (getComputedStyle(el).color || '').toLowerCase();
+    let html = '<div class="tw-color-grid">';
+    BRAND_PALETTE.forEach(c => {
+      const isActive = colorEquals(currentColor, c);
+      html += '<button class="tw-color-swatch' + (isActive ? ' is-active' : '') + '" data-tw="swatch" data-color="' + c + '" style="background:' + c + '"></button>';
+    });
+    html += '</div><div class="tw-color-footer">' +
+      '<button data-tw="color-reset" type="button">기본값 복원</button>' +
+      '<button data-tw="color-close" type="button">닫기</button>' +
+      '</div>';
+    cp.innerHTML = html;
+    const rect = el.getBoundingClientRect();
+    cp.style.top = (rect.top + window.scrollY - 8) + 'px';
+    cp.style.left = (rect.left + window.scrollX) + 'px';
+    cp.classList.add('is-open');
+    requestAnimationFrame(() => {
+      const pr = cp.getBoundingClientRect();
+      if (pr.bottom > window.innerHeight - 8) cp.style.top = (rect.bottom + window.scrollY + 4) + 'px';
+      if (pr.right > window.innerWidth - 8) cp.style.left = Math.max(8, window.innerWidth - pr.width - 8) + 'px';
+    });
+  }
+  function hideColorPanel() { const cp = $('tw-color-panel'); if (cp) cp.classList.remove('is-open'); }
+  function colorEquals(a, b) {
+    if (!a || !b) return false;
+    a = a.toLowerCase(); b = b.toLowerCase();
+    if (a === b) return true;
+    const ha = hexToRgb(b);
+    if (!ha) return false;
+    const m = a.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+    if (!m) return false;
+    return parseInt(m[1]) === ha.r && parseInt(m[2]) === ha.g && parseInt(m[3]) === ha.b;
+  }
+  function hexToRgb(hex) {
+    const h = hex.replace('#', '');
+    if (h.length !== 6) return null;
+    return { r: parseInt(h.substr(0, 2), 16), g: parseInt(h.substr(2, 2), 16), b: parseInt(h.substr(4, 2), 16) };
+  }
+
+  /* Link panel */
+  function showLinkPanelFor(el) {
+    const lp = $('tw-link-panel'); if (!lp) return;
+    const currentHref = el.getAttribute('href') || '';
+    let type = 'none';
+    if (currentHref.startsWith('#')) type = 'anchor';
+    else if (/^https?:\/\//i.test(currentHref)) type = 'url';
+    else if (currentHref) type = 'file';
+    lp.innerHTML =
+      '<div class="tw-link-preview" data-tw="lp-preview">현재 링크: ' + escapeText(currentHref || '(없음)') + '</div>' +
+      '<div class="tw-link-tabs" data-tw="lp-tabs">' +
+        '<button class="tw-link-tab' + (type === 'anchor' ? ' is-active' : '') + '" data-tw="lp-tab" data-type="anchor">🔵 앵커</button>' +
+        '<button class="tw-link-tab' + (type === 'file' ? ' is-active' : '') + '" data-tw="lp-tab" data-type="file">📄 파일</button>' +
+        '<button class="tw-link-tab' + (type === 'url' ? ' is-active' : '') + '" data-tw="lp-tab" data-type="url">🌐 URL</button>' +
+        '<button class="tw-link-tab' + (type === 'none' ? ' is-active' : '') + '" data-tw="lp-tab" data-type="none">✕ 없음</button>' +
+      '</div>' +
+      '<div class="tw-link-body" data-tw="lp-body"><input data-tw="lp-input" type="text" value="' + escapeAttr(currentHref) + '" placeholder="https:// or #anchor or ./file.html"></div>' +
+      '<div class="tw-link-footer">' +
+        '<button data-tw="lp-cancel" type="button">취소</button>' +
+        '<button class="tw-link-save" data-tw="lp-save" type="button">💾 저장</button>' +
+      '</div>';
+    const rect = el.getBoundingClientRect();
+    lp.style.top = (rect.bottom + window.scrollY + 6) + 'px';
+    lp.style.left = (rect.left + window.scrollX) + 'px';
+    lp.classList.add('is-open');
+    lp.dataset.targetType = type;
+  }
+  function hideLinkPanel() { const lp = $('tw-link-panel'); if (lp) lp.classList.remove('is-open'); }
+
+  /* ---------- I/O panel ---------- */
+  function openExportPanel() { const ep = $('tw-export-panel'); if (ep) ep.classList.add('is-open'); }
+  function closeExportPanel() { const ep = $('tw-export-panel'); if (ep) ep.classList.remove('is-open'); }
+  function toggleExportPanel() {
+    const ep = $('tw-export-panel'); if (!ep) return;
+    ep.classList.contains('is-open') ? closeExportPanel() : openExportPanel();
+  }
+
+  function buildTimestamp() {
+    const d = new Date();
+    const pad = n => String(n).padStart(2, '0');
+    return d.getFullYear() + '.' + pad(d.getMonth() + 1) + '.' + pad(d.getDate()) + '-' + pad(d.getHours()) + '.' + pad(d.getMinutes());
+  }
+
+  function applyExportCleanup(clone) {
+    const shellC = clone.querySelector('#app-shell');
+    if (shellC) shellC.style.removeProperty('margin-right');
+    const cb = clone.querySelector('body');
+    if (cb) {
+      cb.style.removeProperty('margin-right');
+      cb.classList.remove('tw-desc-open');
+      cb.className = cb.className.split(' ').filter(c => !c.startsWith('tw-mode') && !c.startsWith('tw-elem')).join(' ').trim();
+    }
+    clone.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
+    clone.querySelectorAll('[spellcheck]').forEach(el => el.removeAttribute('spellcheck'));
+    clone.querySelectorAll('[data-tw-active]').forEach(el => el.removeAttribute('data-tw-active'));
+    clone.querySelectorAll('.tw-elem-hover, .tw-elem-editing').forEach(el => el.classList.remove('tw-elem-hover', 'tw-elem-editing'));
+    clone.querySelectorAll('#tw-bar, #tw-toast, #tw-desc-panel, #tw-export-panel, #tw-popover, #tw-color-panel, #tw-link-panel, #tw-pdf-root, #tw-pdf-overlay')
+      .forEach(el => el.remove());
+    clone.querySelectorAll('#tw-baked-script, script[data-tw="baked"], script[data-tw-baked]').forEach(el => el.remove());
+  }
+
+  function buildShareHTML() {
+    const clone = document.documentElement.cloneNode(true);
+    applyExportCleanup(clone);
+    const safeJson = JSON.stringify(spec).replace(/</g, '\\u003c').replace(/>/g, '\\u003e').replace(/&/g, '\\u0026');
+    const bakedScript = clone.ownerDocument.createElement('script');
+    bakedScript.id = 'tw-baked-script';
+    bakedScript.setAttribute('data-tw', 'baked');
+    bakedScript.textContent = 'window.__BAKED_SPEC__ = ' + safeJson + ';\nwindow.__IS_SHARE__ = true;';
+    const headEl = clone.querySelector('head');
+    const injected = headEl ? headEl.querySelector('#tw-injected-script') : null;
+    if (headEl) (injected ? headEl.insertBefore(bakedScript, injected) : headEl.appendChild(bakedScript));
+    return '<!DOCTYPE html>\n' + clone.outerHTML;
+  }
+  function buildPrototypeHTML() {
+    const shell = $('app-shell'); if (!shell) return '';
+    const clone = document.documentElement.cloneNode(true);
+    applyExportCleanup(clone);
+    const safeJson = JSON.stringify(spec).replace(/</g, '\\u003c').replace(/>/g, '\\u003e').replace(/&/g, '\\u0026');
+    const bakedScript = clone.ownerDocument.createElement('script');
+    bakedScript.id = 'tw-baked-script';
+    bakedScript.setAttribute('data-tw', 'baked');
+    bakedScript.textContent = 'window.__BAKED_SPEC__ = ' + safeJson + ';\nwindow.__IS_SHARE__ = false;';
+    const headEl = clone.querySelector('head');
+    const injected = headEl ? headEl.querySelector('#tw-injected-script') : null;
+    if (headEl) (injected ? headEl.insertBefore(bakedScript, injected) : headEl.appendChild(bakedScript));
+    return '<!DOCTYPE html>\n' + clone.outerHTML;
+  }
+
+  /* ---------- desc edit operations ---------- */
+  function findSection(sectionId) {
+    const scr = (spec.screens || []).find(s => s.id === currentScr); if (!scr) return null;
+    if (sectionId === 'basicInfo') return { kind: 'kv', data: scr.basicInfo, set: (v) => scr.basicInfo = v };
+    if (sectionId === 'access') return { kind: 'matrix', data: scr.access };
+    if (sectionId === 'components') return { kind: 'matrix', data: scr.components };
+    if (sectionId === 'commonPolicy') return { kind: 'matrix', data: scr.commonPolicy };
+    if (sectionId.startsWith('feature:')) {
+      const idx = parseInt(sectionId.split(':')[1], 10);
+      const f = scr.features[idx]; if (!f) return null;
+      return { kind: 'matrix', data: f };
+    }
+    return null;
+  }
+
+  function commitCellEdit(sectionId, row, col, value) {
+    const sec = findSection(sectionId); if (!sec) return;
+    if (sec.kind === 'kv') {
+      sec.data[row] = sec.data[row] || ['', ''];
+      sec.data[row][col] = value;
+    } else {
+      sec.data.rows[row] = sec.data.rows[row] || [];
+      sec.data.rows[row][col] = value;
+    }
+  }
+  function commitHeaderEdit(sectionId, col, value) {
+    const sec = findSection(sectionId); if (!sec || sec.kind !== 'matrix') return;
+    sec.data.headers[col] = value;
+  }
+  function addRow(sectionId) {
+    const sec = findSection(sectionId); if (!sec) return;
+    if (sec.kind === 'kv') sec.data.push(['', '']);
+    else sec.data.rows.push(new Array((sec.data.headers || []).length).fill(''));
+  }
+  function delRow(sectionId) {
+    const sec = findSection(sectionId); if (!sec) return;
+    if (sec.kind === 'kv') sec.data.pop();
+    else sec.data.rows.pop();
+  }
+
+  function saveDescEdits() {
+    /* commit pending contenteditable values */
+    document.querySelectorAll('[data-tw-edit="cell"]').forEach(td => {
+      commitCellEdit(td.dataset.section, parseInt(td.dataset.row, 10), parseInt(td.dataset.col, 10), td.textContent.trim());
+    });
+    document.querySelectorAll('[data-tw-edit="header"]').forEach(th => {
+      commitHeaderEdit(th.dataset.section, parseInt(th.dataset.col, 10), th.textContent.trim());
+    });
+    document.querySelectorAll('[data-tw-edit="feature-title"]').forEach(span => {
+      const scr = (spec.screens || []).find(s => s.id === currentScr); if (!scr) return;
+      const idx = parseInt(span.dataset.idx, 10);
+      if (scr.features[idx]) scr.features[idx].title = span.textContent.trim();
+    });
+    const pt = document.querySelector('[data-tw-edit="purpose"]');
+    if (pt) { const scr = (spec.screens || []).find(s => s.id === currentScr); if (scr) scr.purpose = pt.value; }
+    document.querySelectorAll('[data-tw="meta-input"]').forEach(inp => {
+      spec.meta[inp.dataset.key] = inp.value.trim();
+    });
+
+    try { localStorage.setItem(FILE_KEY + '_specEdits', JSON.stringify(spec)); } catch (e) {}
+    updateBakedScript();
+    editingDesc = false;
+    renderMeta(); renderTabs(); renderDescBody();
+    showToast('변경사항 저장 완료');
+  }
+  function cancelDescEdits() {
+    editingDesc = false;
+    renderMeta(); renderTabs(); renderDescBody();
+  }
+
+  /* ---------- event wiring ---------- */
+  function wireEvents() {
+    /* Tweaks bar */
+    document.addEventListener('click', (e) => {
+      if (!e.isTrusted && !e.__twAllow) return;
+      const target = e.target;
+
+      if (target.closest && target.closest('#tw-btn-prototype')) { setMode('prototype'); return; }
+      if (target.closest && target.closest('#tw-btn-desc')) {
+        if (isDescOpen()) closeDescPanel(); else openDescPanel();
+        return;
+      }
+      if (target.closest && target.closest('#tw-btn-edit')) { setMode('edit'); openDescPanel(); return; }
+      if (target.closest && target.closest('#tw-undo')) { performUndo(); return; }
+      if (target.closest && target.closest('#tw-btn-export')) { toggleExportPanel(); return; }
+      if (target.closest && target.closest('#tw-ex-close')) { closeExportPanel(); return; }
+
+      if (target.closest && target.closest('#tw-desc-close')) { closeDescPanel(); return; }
+      if (target.closest && target.closest('#tw-desc-edit-btn')) {
+        editingDesc = !editingDesc;
+        renderMeta(); renderTabs(); renderDescBody();
+        return;
+      }
+      const tabBtn = target.closest && target.closest('.tw-desc-tab[data-scr]');
+      if (tabBtn) { currentScr = tabBtn.dataset.scr; renderTabs(); renderDescBody(); return; }
+      if (target.closest && target.closest('.tw-tab-add')) {
+        const newId = 'SCR-' + String((spec.screens || []).length + 1).padStart(3, '0');
+        spec.screens.push({
+          id: newId, name: '새 화면', basicInfo: [['화면 ID', newId], ['화면명', '새 화면']], purpose: '',
+          access: { headers: ['접근 가능 사용자', '예외 처리'], rows: [] },
+          components: { headers: ['컴포넌트명', '타입', '노출 필수', '입력 필수', '유효성 조건', '비고'], rows: [] },
+          features: [], commonPolicy: { headers: ['항목', '내용'], rows: [] }
+        });
+        currentScr = newId;
+        renderTabs(); renderDescBody();
+        return;
+      }
+
+      /* Desc edit controls */
+      const editBtn = target.closest && target.closest('[data-tw-edit]');
+      if (editBtn && editingDesc) {
+        const act = editBtn.getAttribute('data-tw-edit');
+        if (act === 'save') { saveDescEdits(); return; }
+        if (act === 'cancel') { cancelDescEdits(); return; }
+        if (act === 'add-row') { addRow(editBtn.dataset.section); renderDescBody(); return; }
+        if (act === 'del-row') { delRow(editBtn.dataset.section); renderDescBody(); return; }
+        if (act === 'add-feature') {
+          const scr = (spec.screens || []).find(s => s.id === currentScr);
+          if (scr) {
+            const n = (scr.features || []).length + 1;
+            scr.features.push({ title: '5-' + n + '. 새 기능', headers: ['항목', '내용'], rows: [['항목', '내용']] });
+          }
+          renderDescBody(); return;
+        }
+        if (act === 'del-feature') {
+          const scr = (spec.screens || []).find(s => s.id === currentScr);
+          const idx = parseInt(editBtn.dataset.idx, 10);
+          if (scr && scr.features[idx] && confirm('이 기능 섹션을 삭제하시겠습니까?')) {
+            scr.features.splice(idx, 1); renderDescBody();
+          }
+          return;
+        }
+      }
+
+      /* Error UI buttons */
+      const errLoad = target.closest && target.closest('[data-tw="err-load"]');
+      if (errLoad) { const fi = $('tw-load-json-input'); if (fi) fi.click(); return; }
+      const errReload = target.closest && target.closest('[data-tw="err-reload"]');
+      if (errReload) {
+        loadSpec().then(v => {
+          spec.meta = v.meta; spec.screens = v.screens;
+          if (spec.screens.length) currentScr = spec.screens[0].id;
+          updateBakedScript();
+          renderMeta(); renderTabs(); renderDescBody();
+        });
+        return;
+      }
+
+      /* I/O actions */
+      if (target.closest && target.closest('#tw-ex-share')) {
+        const html = buildShareHTML();
+        const fname = FILE_KEY + '_share_' + buildTimestamp() + '.html';
+        downloadFile(fname, html, 'text/html;charset=utf-8');
+        showToast(fname + ' 저장 완료'); return;
+      }
+      if (target.closest && target.closest('#tw-ex-prototype')) {
+        const html = buildPrototypeHTML();
+        if (!html) { showToast('Prototype 영역(#app-shell)을 찾을 수 없습니다'); return; }
+        const fname = FILE_KEY + '_prototype.html';
+        downloadFile(fname, html, 'text/html;charset=utf-8');
+        showToast(fname + ' 저장 완료'); return;
+      }
+      if (target.closest && target.closest('#tw-ex-json')) {
+        updateBakedScript();
+        const fname = FILE_KEY + '_description.json';
+        downloadFile(fname, serializeSpec(spec), 'application/json;charset=utf-8');
+        showToast(fname + ' 저장 완료'); return;
+      }
+      if (target.closest && target.closest('#tw-ex-pdf')) {
+        buildSubmissionPDF();
+        return;
+      }
+      if (target.closest && target.closest('#tw-load-json-btn')) { const fi = $('tw-load-json-input'); if (fi) fi.click(); return; }
+      if (target.closest && target.closest('#tw-load-html-btn')) { const fi = $('tw-load-html-input'); if (fi) fi.click(); return; }
+
+      /* I/O 패널 외부 클릭 시 닫기 */
+      const ep = $('tw-export-panel');
+      if (ep && ep.classList.contains('is-open') &&
+        !target.closest('#tw-export-panel') && !target.closest('#tw-btn-export')) {
+        closeExportPanel();
+      }
+
+      /* Color panel actions */
+      const swatch = target.closest && target.closest('[data-tw="swatch"]');
+      if (swatch && activeEditEl) {
+        const prevColor = activeEditEl.style.color;
+        const newColor = swatch.dataset.color;
+        activeEditEl.style.color = newColor;
+        pushUndo('색상 변경', () => { activeEditEl && (activeEditEl.style.color = prevColor); });
+        saveDomSnapshot();
+        showColorPanelFor(activeEditEl);
+        return;
+      }
+      if (target.closest && target.closest('[data-tw="color-reset"]')) {
+        if (activeEditEl) {
+          const prev = activeEditEl.style.color; activeEditEl.style.removeProperty('color');
+          pushUndo('색상 기본값', () => { activeEditEl && (activeEditEl.style.color = prev); });
+          saveDomSnapshot();
+        }
+        hideColorPanel(); return;
+      }
+      if (target.closest && target.closest('[data-tw="color-close"]')) { hideColorPanel(); return; }
+
+      /* Link panel */
+      const lpTab = target.closest && target.closest('[data-tw="lp-tab"]');
+      if (lpTab) {
+        const lp = $('tw-link-panel'); if (lp) {
+          lp.dataset.targetType = lpTab.dataset.type;
+          lp.querySelectorAll('[data-tw="lp-tab"]').forEach(t => t.classList.toggle('is-active', t === lpTab));
+          const inp = lp.querySelector('[data-tw="lp-input"]'); if (inp && lpTab.dataset.type === 'none') inp.value = '';
+        }
+        return;
+      }
+      if (target.closest && target.closest('[data-tw="lp-cancel"]')) { hideLinkPanel(); return; }
+      if (target.closest && target.closest('[data-tw="lp-save"]')) {
+        const lp = $('tw-link-panel'); if (lp && activeEditEl) {
+          const type = lp.dataset.targetType;
+          const inp = lp.querySelector('[data-tw="lp-input"]');
+          const val = inp ? inp.value.trim() : '';
+          const prevHref = activeEditEl.getAttribute('href');
+          if (type === 'none' || !val) activeEditEl.removeAttribute('href');
+          else activeEditEl.setAttribute('href', val);
+          pushUndo('링크 변경', () => {
+            if (activeEditEl) {
+              if (prevHref == null) activeEditEl.removeAttribute('href');
+              else activeEditEl.setAttribute('href', prevHref);
+            }
+          });
+          saveDomSnapshot();
+        }
+        hideLinkPanel(); return;
+      }
+
+      /* Popover actions */
+      const popAct = target.closest && target.closest('#tw-popover button');
+      if (popAct && activeEditEl) {
+        const act = popAct.dataset.act;
+        if (act === 'close') { hidePopover(); return; }
+        if (act === 'edit') {
+          const el = activeEditEl;
+          const prev = el.innerHTML;
+          el.setAttribute('contenteditable', 'true');
+          el.focus();
+          const handler = (ev) => {
+            if (ev.key === 'Enter' && !ev.shiftKey) { ev.preventDefault(); el.blur(); }
+            if (ev.key === 'Escape') { ev.preventDefault(); el.innerHTML = prev; el.blur(); }
+          };
+          el.addEventListener('keydown', handler);
+          el.addEventListener('blur', () => {
+            el.removeAttribute('contenteditable');
+            el.removeEventListener('keydown', handler);
+            if (el.innerHTML !== prev) {
+              pushUndo('텍스트 편집', () => { el.innerHTML = prev; });
+              saveDomSnapshot();
+            }
+          }, { once: true });
+          return;
+        }
+        if (act === 'color') { showColorPanelFor(activeEditEl); return; }
+        if (act === 'link') { showLinkPanelFor(activeEditEl); return; }
+        if (act === 'dup') {
+          const el = activeEditEl;
+          const cloned = el.cloneNode(true);
+          el.parentNode.insertBefore(cloned, el.nextSibling);
+          pushUndo('복제', () => { cloned.remove(); });
+          saveDomSnapshot();
+          showPopoverFor(cloned);
+          return;
+        }
+        if (act === 'up') {
+          const el = activeEditEl; const prev = el.previousElementSibling;
+          if (prev) {
+            el.parentNode.insertBefore(el, prev);
+            pushUndo('위로 이동', () => { el.parentNode.insertBefore(prev, el); el.parentNode.insertBefore(el, prev.nextSibling); });
+            saveDomSnapshot(); showPopoverFor(el);
+          }
+          return;
+        }
+        if (act === 'down') {
+          const el = activeEditEl; const next = el.nextElementSibling;
+          if (next) {
+            el.parentNode.insertBefore(next, el);
+            pushUndo('아래로 이동', () => { next.parentNode.insertBefore(el, next); });
+            saveDomSnapshot(); showPopoverFor(el);
+          }
+          return;
+        }
+        if (act === 'del') {
+          if (confirm('이 요소를 삭제하시겠습니까?')) {
+            const el = activeEditEl; const parent = el.parentNode; const next = el.nextSibling;
+            el.remove();
+            pushUndo('삭제', () => { parent.insertBefore(el, next); });
+            saveDomSnapshot(); hidePopover();
+          }
+          return;
+        }
+      }
+
+      /* Edit mode element click */
+      if (currentMode === 'edit' && isEditableTarget(target)) {
+        e.preventDefault(); e.stopPropagation();
+        showPopoverFor(target);
+        return;
+      }
+    }, true);
+
+    /* Edit mode hover */
+    document.addEventListener('mouseover', (e) => {
+      if (currentMode !== 'edit') return;
+      if (!isEditableTarget(e.target)) return;
+      document.querySelectorAll('.tw-elem-hover').forEach(x => x.classList.remove('tw-elem-hover'));
+      e.target.classList.add('tw-elem-hover');
+    });
+    document.addEventListener('mouseout', (e) => {
+      if (e.target && e.target.classList) e.target.classList.remove('tw-elem-hover');
+    });
+
+    /* Keyboard */
+    document.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z' && currentMode === 'edit') {
+        e.preventDefault(); performUndo();
+      }
+      if (e.key === 'Escape') { hidePopover(); hideColorPanel(); hideLinkPanel(); }
+    });
+
+    /* Resize */
+    window.addEventListener('resize', () => { syncBarOffset(isDescOpen()); });
+
+    /* File input handlers */
+    const jsonInput = $('tw-load-json-input');
+    if (jsonInput) {
+      jsonInput.addEventListener('change', () => {
+        const file = jsonInput.files && jsonInput.files[0]; if (!file) return;
+        const reader = new FileReader();
+        reader.onload = () => {
+          try {
+            const data = JSON.parse(reader.result);
+            const validated = validateSpec(data);
+            spec.meta = validated.meta; spec.screens = validated.screens;
+            currentScr = spec.screens[0] ? spec.screens[0].id : null;
+            descLoadError = null;
+            updateBakedScript();
+            renderMeta(); renderTabs(); renderDescBody();
+            showToast(file.name + ' 불러오기 완료');
+          } catch (ex) { showToast('JSON 파싱 실패: ' + ex.message); }
+          jsonInput.value = '';
+        };
+        reader.readAsText(file);
+      });
+    }
+    const htmlInput = $('tw-load-html-input');
+    if (htmlInput) {
+      htmlInput.addEventListener('change', () => {
+        const file = htmlInput.files && htmlInput.files[0]; if (!file) return;
+        const reader = new FileReader();
+        reader.onload = () => {
+          if (applyPrototypeHTML(reader.result)) showToast(file.name + ' Prototype 적용 완료');
+          else showToast('Prototype HTML 적용 실패: 형식이 올바르지 않습니다');
+          htmlInput.value = '';
+        };
+        reader.readAsText(file);
+      });
+    }
+
+    /* ----- Body content event delegation (이전 inline 스크립트 대체) ----- */
+
+    /* PRC pricing slider (event-delegation 방식) */
+    (function () {
+      const STEPS = [
+        {label:'1~30',   card:'small',  priceMedium:'360,000', priceLarge:'960,000'},
+        {label:'31~50',  card:'small',  priceMedium:'360,000', priceLarge:'960,000'},
+        {label:'51~100', card:'medium', priceMedium:'360,000', priceLarge:'960,000'},
+        {label:'101~200',card:'medium', priceMedium:'680,000', priceLarge:'960,000'},
+        {label:'201~300',card:'large',  priceMedium:'680,000', priceLarge:'960,000'},
+        {label:'301~500',card:'large',  priceMedium:'680,000', priceLarge:'1,600,000'},
+        {label:'501~999',card:'large',  priceMedium:'680,000', priceLarge:'2,500,000'},
+        {label:'1000+',  card:'large',  priceMedium:'680,000', priceLarge:'별도 문의'}
+      ];
+      const ACTIVE = ['ring-4','ring-accent-500','ring-offset-2','shadow-card-hover','border-transparent'];
+      const INACTIVE_LIGHT = ['border-ink-200'];
+      const INACTIVE_DARK  = ['border-white/20'];
+      function setActive(card, mode) {
+        if (!card) return;
+        card.classList.remove(...ACTIVE, ...INACTIVE_LIGHT, ...INACTIVE_DARK);
+        if (mode === 'light') card.classList.add(...INACTIVE_LIGHT);
+        else if (mode === 'dark') card.classList.add(...INACTIVE_DARK);
+        else card.classList.add(...ACTIVE);
+      }
+      function updateSlider(val) {
+        const slider   = document.getElementById('worker-slider');
+        const countEl  = document.getElementById('worker-count');
+        const cardSmall  = document.getElementById('card-small');
+        const cardMedium = document.getElementById('card-medium');
+        const cardLarge  = document.getElementById('card-large');
+        const priceMedium = document.getElementById('price-medium');
+        const priceLarge  = document.getElementById('price-large');
+        const ctaLarge    = document.getElementById('cta-large');
+        if (!slider) return;
+        const pct = (val / 7) * 100;
+        slider.style.background = 'linear-gradient(to right,#2563EB 0%,#2563EB ' + pct + '%,#E2E8F0 ' + pct + '%,#E2E8F0 100%)';
+        const s = STEPS[val];
+        if (countEl) countEl.textContent = s.label;
+        if (priceMedium) priceMedium.textContent = s.priceMedium;
+        if (priceLarge)  priceLarge.textContent  = s.priceLarge;
+        if (s.card === 'small') {
+          setActive(cardSmall);
+          setActive(cardMedium, 'light');
+          setActive(cardLarge, 'dark');
+        } else if (s.card === 'medium') {
+          setActive(cardSmall, 'light');
+          setActive(cardMedium);
+          setActive(cardLarge, 'dark');
+        } else {
+          setActive(cardSmall, 'light');
+          setActive(cardMedium, 'light');
+          setActive(cardLarge);
+        }
+        const workerLimit = document.getElementById('large-worker-limit');
+        if (val === 7) {
+          if (ctaLarge) ctaLarge.innerHTML = '<a href="./ASK_shared_planner.html" class="block w-full text-center px-4 py-3 rounded-xl bg-accent-500 text-white font-semibold shadow-cta hover:bg-accent-600 transition">도입 문의하기</a>';
+          if (workerLimit) workerLimit.innerHTML = '<span class="text-brand-300">✓</span> 근로자 무제한';
+        } else {
+          if (ctaLarge) ctaLarge.innerHTML = '<a href="https://safenow.co.kr/mber/support/join/join/step1" class="block w-full text-center px-4 py-3 rounded-xl bg-white text-ink-900 font-semibold hover:bg-ink-100 transition">시작하기</a>';
+          if (workerLimit) workerLimit.innerHTML = '<span class="text-brand-300">✓</span> 근로자 1000명까지';
+        }
+      }
+      document.addEventListener('input', (e) => {
+        const slider = e.target.closest && e.target.closest('#worker-slider');
+        if (!slider) return;
+        if (currentMode === 'edit') return;
+        updateSlider(parseInt(slider.value, 10));
+      });
+      function initSlider() {
+        const slider = document.getElementById('worker-slider');
+        if (slider) updateSlider(parseInt(slider.value, 10) || 0);
+      }
+      setTimeout(initSlider, 0);
+      setTimeout(initSlider, 250);
+      setTimeout(initSlider, 800);
+    })();
+
+    /* Mobile menu */
+    function applyMobileMenu(open) {
+      const sideMenu = document.getElementById('mobile-side-menu');
+      const backdrop = document.getElementById('mobile-menu-backdrop');
+      const toggleBtn = document.getElementById('mobile-menu-toggle');
+      if (!sideMenu || !backdrop) return;
+      if (open) {
+        sideMenu.classList.add('is-open');
+        backdrop.classList.add('is-open');
+        document.body.classList.add('menu-open');
+        toggleBtn && toggleBtn.setAttribute('aria-expanded', 'true');
+        backdrop.setAttribute('aria-hidden', 'false');
+      } else {
+        sideMenu.classList.remove('is-open');
+        backdrop.classList.remove('is-open');
+        document.body.classList.remove('menu-open');
+        toggleBtn && toggleBtn.setAttribute('aria-expanded', 'false');
+        backdrop.setAttribute('aria-hidden', 'true');
+      }
+    }
+    document.addEventListener('click', (e) => {
+      if (currentMode === 'edit') return;
+      if (e.target.closest('#mobile-menu-toggle')) { applyMobileMenu(true); return; }
+      if (e.target.closest('#mobile-menu-close')) { applyMobileMenu(false); return; }
+      if (e.target.closest('#mobile-menu-backdrop')) { applyMobileMenu(false); return; }
+      if (e.target.closest('.mobile-nav-link')) { applyMobileMenu(false); }
+    });
+    document.addEventListener('keydown', (e) => {
+      const sideMenu = document.getElementById('mobile-side-menu');
+      if (e.key === 'Escape' && sideMenu && sideMenu.classList.contains('is-open')) applyMobileMenu(false);
+    });
+    if (window.matchMedia) {
+      const mql = window.matchMedia('(min-width: 1024px)');
+      mql.addEventListener && mql.addEventListener('change', (e) => { if (e.matches) applyMobileMenu(false); });
+    }
+  }
+
+  /* ---------- 제출용 PDF Export ---------- */
+  async function buildSubmissionPDF() {
+    const jsPDFClass = (window.jspdf && window.jspdf.jsPDF) || window.jsPDF;
+    if (typeof window.html2canvas === 'undefined' || !jsPDFClass) {
+      showToast('PDF 라이브러리 로드 중입니다. 잠시 후 다시 시도해주세요.');
+      return;
+    }
+    if (descLoadError) {
+      showToast('JSON 오류 상태에서는 PDF를 생성할 수 없습니다.');
+      return;
+    }
+    const shell = $('app-shell');
+    if (!shell) { showToast('본문 영역(#app-shell)을 찾을 수 없습니다.'); return; }
+
+    /* 버튼 일시 비활성화 */
+    const allButtons = document.querySelectorAll('#tw-bar .tw-btn, #tw-export-panel button');
+    const prevDisabled = new Map();
+    allButtons.forEach(b => { prevDisabled.set(b, b.disabled); b.disabled = true; });
+
+    /* 상태 저장 */
+    const prevMode = currentMode;
+    const prevDescOpen = isDescOpen();
+    const ep = $('tw-export-panel');
+    const prevExportOpen = !!(ep && ep.classList.contains('is-open'));
+    let pdfRoot = null;
+
+    try {
+      showToast('PDF 생성 중… (1/3 화면 캡처)');
+
+      /* Prototype 모드 강제 + 패널 닫기 */
+      setMode('prototype');
+      if (prevDescOpen) closeDescPanel();
+      closeExportPanel();
+      await new Promise(r => setTimeout(r, 450));
+
+      /* 본문 캡처 */
+      const captureCanvas = await window.html2canvas(shell, {
+        scale: 2, useCORS: true, backgroundColor: '#ffffff', logging: false
+      });
+      const captureDataUrl = captureCanvas.toDataURL('image/jpeg', 0.92);
+
+      showToast('PDF 생성 중… (2/3 페이지 조립)');
+
+      /* CSS를 document.head 에 inject — html2canvas 가 iframe 클론에 head stylesheet 만 복사하므로
+         pdfRoot 내부에 <style> 을 두면 무시된다. */
+      injectPdfStyles();
+
+      /* PDF 본체 생성 — 실제 좌표(0,0)에 배치 + body overflow:hidden 으로 페이지 늘어남 차단 */
+      pdfRoot = buildPdfHtml(captureDataUrl);
+      pdfRoot.style.cssText = 'position:absolute;left:0;top:0;width:794px;background:#fff;font-family:"Pretendard Variable",Pretendard,-apple-system,sans-serif;color:#0f172a;z-index:999998;';
+
+      /* 생성 중 오버레이 — pdfRoot 위를 덮음 */
+      const overlay = document.createElement('div');
+      overlay.id = 'tw-pdf-overlay';
+      overlay.setAttribute('data-tw', 'pdf-overlay');
+      overlay.style.cssText = 'position:fixed;inset:0;background:rgba(15,23,42,.88);z-index:999999;display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;font-weight:600;font-family:"Pretendard Variable",Pretendard,sans-serif;letter-spacing:.02em;';
+      overlay.textContent = '📑 PDF 생성 중… 잠시만 기다려주세요.';
+      document.body.appendChild(overlay);
+
+      const prevOverflow = document.body.style.overflow;
+      const prevScrollX = window.scrollX, prevScrollY = window.scrollY;
+      document.body.style.overflow = 'hidden';
+      window.scrollTo(0, 0);
+
+      document.body.appendChild(pdfRoot);
+
+      /* 이미지 로드 + 레이아웃 안정 대기 */
+      await waitForImages(pdfRoot);
+      await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+      await new Promise(r => setTimeout(r, 400));
+
+      showToast('PDF 생성 중… (3/3 파일 생성)');
+
+      const filename = FILE_KEY + '_spec_' + buildTimestamp() + '.pdf';
+
+      /* ★ 페이지별 직접 캡처 + jsPDF 조립 — html2pdf 통합 호출보다 안정적 */
+      try {
+        const pdf = new jsPDFClass({ unit: 'mm', format: 'a4', orientation: 'portrait' });
+        const pages = pdfRoot.querySelectorAll('.pdf-page');
+        if (!pages.length) throw new Error('PDF 페이지 요소를 찾을 수 없습니다');
+
+        for (let i = 0; i < pages.length; i++) {
+          showToast('PDF 생성 중… (' + (i + 1) + '/' + pages.length + ' 페이지 캡처)');
+          /* ★ 캡처 치수를 A4 비율(794×1123)로 고정 — 페이지 콘텐츠가 변해도 비율 일정 유지 */
+          const pageCanvas = await window.html2canvas(pages[i], {
+            scale: 2, useCORS: true, backgroundColor: '#ffffff', logging: false,
+            width: 794, height: 1123,
+            windowWidth: 794, windowHeight: 1123
+          });
+          const pageImg = pageCanvas.toDataURL('image/jpeg', 0.95);
+          if (i > 0) pdf.addPage();
+          pdf.addImage(pageImg, 'JPEG', 0, 0, 210, 297);
+        }
+
+        pdf.save(filename);
+      } finally {
+        document.body.style.overflow = prevOverflow;
+        window.scrollTo(prevScrollX, prevScrollY);
+      }
+
+      showToast(filename + ' 저장 완료');
+    } catch (e) {
+      console.error('PDF 생성 실패:', e);
+      showToast('PDF 생성 실패: ' + (e && e.message ? e.message : e));
+    } finally {
+      if (pdfRoot && pdfRoot.parentNode) pdfRoot.parentNode.removeChild(pdfRoot);
+      const stuck = document.getElementById('tw-pdf-root');
+      if (stuck && stuck.parentNode) stuck.parentNode.removeChild(stuck);
+      const stuckOverlay = document.getElementById('tw-pdf-overlay');
+      if (stuckOverlay && stuckOverlay.parentNode) stuckOverlay.parentNode.removeChild(stuckOverlay);
+      const stuckStyles = document.getElementById('tw-pdf-styles');
+      if (stuckStyles && stuckStyles.parentNode) stuckStyles.parentNode.removeChild(stuckStyles);
+      if (prevDescOpen) openDescPanel();
+      if (prevMode !== 'prototype') setMode(prevMode);
+      if (prevExportOpen) openExportPanel();
+      allButtons.forEach(b => { b.disabled = !!prevDisabled.get(b); });
+      refreshUndoBtn();
+    }
+  }
+
+  function injectPdfStyles() {
+    if (document.getElementById('tw-pdf-styles')) return;
+    const s = document.createElement('style');
+    s.id = 'tw-pdf-styles';
+    s.setAttribute('data-tw', 'pdf-styles');
+    s.textContent =
+      '#tw-pdf-root, #tw-pdf-root * { box-sizing: border-box; font-family:"Pretendard Variable",Pretendard,-apple-system,sans-serif; }' +
+      /* ★ height 고정 — min-height면 콘텐츠가 자라 1123px를 넘으면서 A4 비율과 어긋나 글자가 세로 압축됨 */
+      '#tw-pdf-root .pdf-page { width:794px; height:1123px; padding:60px 64px; background:#fff; position:relative; display:block; overflow:hidden; }' +
+      '#tw-pdf-root .pdf-cover { background:linear-gradient(180deg,#fff 0%,#f8fafc 100%); }' +
+      '#tw-pdf-root .cv-div { height:2px; background:#2563eb; margin:60px 0 16px; }' +
+      '#tw-pdf-root .cv-div.bottom { background:#cbd5e1; margin:16px 0 24px; }' +
+      '#tw-pdf-root .cv-mid { text-align:center; padding:30px 0 0; }' +
+      '#tw-pdf-root .cv-type { font-size:14px; font-weight:600; color:#64748b; letter-spacing:.25em; margin-bottom:24px; }' +
+      '#tw-pdf-root .cv-mid h1 { font-size:36px; font-weight:800; letter-spacing:-.02em; line-height:1.25; margin:0; color:#0f172a; }' +
+      '#tw-pdf-root .cv-mid h1.accent2 { margin-top:16px; }' +
+      '#tw-pdf-root .cv-mid h1 .acc { color:#1d4ed8; }' +
+      '#tw-pdf-root .cv-meta { display:flex; justify-content:center; margin-top:60px; }' +
+      '#tw-pdf-root .cv-meta table { border-collapse:collapse; font-size:12px; min-width:300px; }' +
+      '#tw-pdf-root .cv-meta th, #tw-pdf-root .cv-meta td { border:1px solid #cbd5e1; padding:7px 14px; text-align:left; color:#0f172a; }' +
+      '#tw-pdf-root .cv-meta th { background:#f8fafc; color:#334155; font-weight:700; width:120px; }' +
+      '#tw-pdf-root .cv-bottom { text-align:center; padding-top:24px; margin-top:50px; font-size:12px; font-weight:700; color:#0f172a; letter-spacing:.02em; }' +
+      '#tw-pdf-root h2.sec-title { font-size:18px; font-weight:800; color:#0f172a; margin:0 0 12px; padding-bottom:6px; border-bottom:2px solid #2563eb; letter-spacing:-.01em; }' +
+      '#tw-pdf-root h3.sub-title { font-size:14px; font-weight:700; color:#1d4ed8; margin:14px 0 5px; }' +
+      '#tw-pdf-root h4.feat-title { font-size:13px; font-weight:700; color:#334155; margin:10px 0 4px; padding-left:6px; border-left:3px solid #3b82f6; }' +
+      '#tw-pdf-root p.body-p { font-size:12px; line-height:1.65; color:#334155; margin:0 0 6px; }' +
+      '#tw-pdf-root .spec-table { width:100%; border-collapse:collapse; font-size:11px; margin:0 0 8px; table-layout:fixed; }' +
+      '#tw-pdf-root .spec-table th, #tw-pdf-root .spec-table td { border:1px solid #cbd5e1; padding:6px 9px; vertical-align:top; line-height:1.55; word-break:break-word; color:#334155; text-align:left; }' +
+      '#tw-pdf-root .spec-table th { background:#eff6ff; color:#1d4ed8; font-weight:700; }' +
+      '#tw-pdf-root .spec-table.kv td:first-child { background:#f8fafc; font-weight:700; color:#334155; width:120px; }' +
+      '#tw-pdf-root .chapter-head { display:flex; align-items:center; justify-content:space-between; border-bottom:2px solid #2563eb; padding-bottom:8px; margin-bottom:14px; }' +
+      '#tw-pdf-root .scr-id { background:#1d4ed8; color:#fff; font-size:11px; font-weight:700; padding:3px 10px; border-radius:4px; letter-spacing:.05em; }' +
+      '#tw-pdf-root .scr-name { font-size:20px; font-weight:800; color:#0f172a; flex:1; padding:0 14px; }' +
+      '#tw-pdf-root .scr-version { font-size:11px; color:#64748b; }' +
+      '#tw-pdf-root .capture-box { border:1px solid #cbd5e1; background:#f8fafc; width:100%; overflow:hidden; }' +
+      '#tw-pdf-root .capture-box img { display:block; width:100%; height:auto; }' +
+      '#tw-pdf-root .capture-meta { font-size:10px; color:#64748b; margin-top:10px; text-align:right; }' +
+      '#tw-pdf-root .doc-end { margin-top:50px; padding-top:14px; border-top:1px solid #f1f5f9; text-align:center; font-size:10px; color:#64748b; }';
+    document.head.appendChild(s);
+  }
+
+  function waitForImages(root) {
+    const imgs = root.querySelectorAll('img');
+    return Promise.all(Array.from(imgs).map(img => {
+      if (img.complete && img.naturalWidth > 0) return Promise.resolve();
+      return new Promise(resolve => {
+        img.addEventListener('load', resolve, { once: true });
+        img.addEventListener('error', resolve, { once: true });
+      });
+    }));
+  }
+
+  function buildPdfHtml(captureDataUrl) {
+    const root = document.createElement('div');
+    root.id = 'tw-pdf-root';
+    root.setAttribute('data-tw', 'pdf-root');
+    /* 스타일은 injectPdfStyles()로 document.head 에 들어가므로 여기서는 inline cssText 없음.
+       (cssText는 buildSubmissionPDF 에서 위치 지정용으로 오버라이드됨) */
+
+    const m = spec.meta || {};
+    const projectName = m.projectName || PROJECT_NAME;
+    const version = m.version || 'v1.0.0';
+    const date = m.date || '';
+    const author = m.author || '';
+    const year = new Date().getFullYear();
+    const screens = spec.screens || [];
+    const screenIds = screens.map(s => s.id + ' (' + s.name + ')').join(', ');
+    const history = (m.history && m.history.length) ? m.history : [{ version: version, date: date, author: author, note: '최초 작성' }];
+
+    const esc = s => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    const splitProject = (n) => {
+      const mm = String(n).match(/^(.+?)(\s*[│|]\s*)(.+)$/);
+      return mm ? { before: mm[1], sep: mm[2], after: mm[3] } : { before: '', sep: '', after: n };
+    };
+    const renderKV = (rows) => {
+      if (!rows || !rows.length) return '<p class="body-p" style="color:#94a3b8">—</p>';
+      return '<table class="spec-table kv"><tbody>' +
+        rows.map(r => '<tr><td>' + esc(r[0] || '') + '</td><td>' + esc(r[1] || '') + '</td></tr>').join('') +
+        '</tbody></table>';
+    };
+    const renderMatrix = (t) => {
+      if (!t || !t.headers || !t.headers.length) return '<p class="body-p" style="color:#94a3b8">—</p>';
+      const cols = t.headers.length;
+      const firstW = (cols === 2) ? ' style="width:30mm"' : '';
+      return '<table class="spec-table"><thead><tr>' +
+        t.headers.map((h, i) => '<th' + (i === 0 ? firstW : '') + '>' + esc(h) + '</th>').join('') +
+        '</tr></thead><tbody>' +
+        (t.rows || []).map(r => '<tr>' + t.headers.map((_, i) => '<td>' + esc(r[i] || '') + '</td>').join('') + '</tr>').join('') +
+        '</tbody></table>';
+    };
+
+    /* ── Cover ── */
+    const sp = splitProject(projectName);
+    const cover = document.createElement('section');
+    cover.className = 'pdf-page pdf-cover';
+    cover.innerHTML =
+      '<div class="cv-div"></div>' +
+      '<div class="cv-mid">' +
+        '<div class="cv-type">SCREEN DESIGN SPECIFICATION</div>' +
+        '<h1>화면 설계서</h1>' +
+        '<h1 class="accent2"><span class="acc">' + esc(sp.before) + '</span>' + esc(sp.sep) + esc(sp.after) + '</h1>' +
+        '<div class="cv-meta"><table>' +
+          '<tr><th>프로젝트</th><td>' + esc(projectName) + '</td></tr>' +
+          '<tr><th>버전</th><td>' + esc(version) + '</td></tr>' +
+          '<tr><th>작성일</th><td>' + esc(date) + '</td></tr>' +
+          '<tr><th>작성자</th><td>' + esc(author) + '</td></tr>' +
+        '</table></div>' +
+      '</div>' +
+      '<div class="cv-div bottom"></div>' +
+      '<div class="cv-bottom">© ' + year + ' (주)다온플레이스 · All rights reserved.</div>';
+    root.appendChild(cover);
+
+    /* ── Doc Info ── */
+    const info = document.createElement('section');
+    info.className = 'pdf-page';
+    info.innerHTML =
+      '<h2 class="sec-title">1. 문서 정보</h2>' +
+      '<h3 class="sub-title">1-1. 문서 개요</h3>' +
+      '<p class="body-p">본 문서는 <strong>' + esc(projectName) + '</strong> 화면의 기획·설계 명세를 기술한 산출물이다. 화면별 구성·동작·정책을 정의한다.</p>' +
+      '<h3 class="sub-title">1-2. 적용 범위</h3>' +
+      '<table class="spec-table kv"><tbody>' +
+        '<tr><td>포함된 화면 수</td><td>' + screens.length + '개</td></tr>' +
+        '<tr><td>화면 ID 목록</td><td>' + esc(screenIds || '—') + '</td></tr>' +
+        '<tr><td>관련 산출물</td><td>' + FILE_KEY + '_planner.html, ' + FILE_KEY + '_prototype.html, ' + FILE_KEY + '_description.json</td></tr>' +
+      '</tbody></table>' +
+      '<h3 class="sub-title">1-3. 개정 이력</h3>' +
+      '<table class="spec-table"><thead><tr>' +
+        '<th style="width:18mm">버전</th><th style="width:24mm">일자</th><th style="width:24mm">작성자</th><th>변경 내용</th>' +
+      '</tr></thead><tbody>' +
+        history.map(h => '<tr><td>' + esc(h.version || '') + '</td><td>' + esc(h.date || '') + '</td><td>' + esc(h.author || '') + '</td><td>' + esc(h.note || '') + '</td></tr>').join('') +
+      '</tbody></table>';
+    root.appendChild(info);
+
+    /* ── Per screen ── */
+    const captureTs = new Date().toLocaleString('ko-KR', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' });
+    screens.forEach((scr, i) => {
+      /* Capture page */
+      const capPage = document.createElement('section');
+      capPage.className = 'pdf-page';
+      const capInner = (i === 0)
+        ? '<img src="' + captureDataUrl + '" alt="' + esc(scr.name) + ' 캡처">'
+        : '<div style="aspect-ratio:1440/900;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:11px;padding:24mm;text-align:center;">화면 캡처 미준비<br>(현재 표시 중인 화면만 자동 캡처됨 — 다른 화면은 해당 planner에서 개별 출력 필요)</div>';
+      capPage.innerHTML =
+        '<div class="chapter-head">' +
+          '<span class="scr-id">' + esc(scr.id) + '</span>' +
+          '<span class="scr-name">' + esc(scr.name) + '</span>' +
+          '<span class="scr-version">' + esc(version) + '</span>' +
+        '</div>' +
+        '<h3 class="sub-title">화면 캡처 (데스크탑)</h3>' +
+        '<div class="capture-box">' + capInner + '</div>' +
+        '<div class="capture-meta">캡처 일시: ' + esc(captureTs) + ' · planner v1.3</div>';
+      root.appendChild(capPage);
+
+      /* Description pages — 콘텐츠 분량에 따라 자동 페이지 분할 */
+      const chapterHeadHtml =
+        '<div class="chapter-head">' +
+          '<span class="scr-id">' + esc(scr.id) + '</span>' +
+          '<span class="scr-name">' + esc(scr.name) + '</span>' +
+          '<span class="scr-version">' + esc(version) + '</span>' +
+        '</div>';
+
+      /* 한 페이지 안에서 절대 분리되면 안 되는 원자 단위 섹션 묶음 */
+      const sections = [];
+      sections.push('<h3 class="sub-title">2-1. 화면 기본 정보</h3>' + renderKV(scr.basicInfo));
+      sections.push('<h3 class="sub-title">2-2. 화면 목적</h3><p class="body-p">' + esc(scr.purpose || '—') + '</p>');
+      sections.push('<h3 class="sub-title">2-3. 접근 권한</h3>' + renderMatrix(scr.access));
+      sections.push('<h3 class="sub-title">2-4. 컴포넌트 정의</h3>' + renderMatrix(scr.components));
+      /* 2-5 기능 명세 헤더와 첫 기능을 묶어 외톨이 헤더 방지 */
+      if ((scr.features || []).length > 0) {
+        sections.push('<h3 class="sub-title">2-5. 기능 명세</h3><h4 class="feat-title">' + esc(scr.features[0].title) + '</h4>' + renderMatrix(scr.features[0]));
+        for (let fi = 1; fi < scr.features.length; fi++) {
+          const f = scr.features[fi];
+          sections.push('<h4 class="feat-title">' + esc(f.title) + '</h4>' + renderMatrix(f));
+        }
+      } else {
+        sections.push('<h3 class="sub-title">2-5. 기능 명세</h3><p class="body-p">—</p>');
+      }
+      sections.push('<h3 class="sub-title">2-6. 공통 정책</h3>' + renderMatrix(scr.commonPolicy));
+      if (i === screens.length - 1) {
+        sections.push('<div class="doc-end">— 문서 끝 —<br>본 문서는 ' + esc(projectName) + ' 화면 설계 명세이며, ' + esc(date) + ' 시점의 기획 산출물입니다.</div>');
+      }
+
+      /* 각 섹션의 높이를 임시 #tw-pdf-root 측정 컨테이너로 미리 측정 */
+      const measurer = document.createElement('div');
+      measurer.id = 'tw-pdf-root';
+      measurer.setAttribute('data-tw', 'pdf-measurer');
+      /* .pdf-page 콘텐츠 영역 폭 = 794 - 64*2 = 666px */
+      measurer.style.cssText = 'position:absolute;left:-99999px;top:0;width:666px;visibility:hidden;background:#fff;';
+      document.body.appendChild(measurer);
+
+      measurer.innerHTML = chapterHeadHtml;
+      const headerHeight = measurer.offsetHeight;
+      const sectionHeights = sections.map(html => { measurer.innerHTML = html; return measurer.offsetHeight; });
+      measurer.remove();
+
+      /* 1123(페이지 높이) - 60*2(상하 패딩) = 1003px 가용 콘텐츠 영역 */
+      const AVAIL = 1003;
+      const descPages = [];
+      let curHtml = chapterHeadHtml;
+      let curH = headerHeight;
+      for (let s = 0; s < sections.length; s++) {
+        const sh = sectionHeights[s];
+        if (curH + sh > AVAIL && curHtml !== chapterHeadHtml) {
+          descPages.push(curHtml);
+          curHtml = chapterHeadHtml;
+          curH = headerHeight;
+        }
+        curHtml += sections[s];
+        curH += sh;
+      }
+      descPages.push(curHtml);
+
+      descPages.forEach(pageHtml => {
+        const dp = document.createElement('section');
+        dp.className = 'pdf-page';
+        dp.innerHTML = pageHtml;
+        root.appendChild(dp);
+      });
+    });
+
+    return root;
+  }
+
+  /* ---------- share lockdown ---------- */
+  function applyShareLockdown() {
+    if (!isShare) return;
+    document.body.classList.add('tw-is-share');
+  }
+
+  /* ---------- init ---------- */
+  function init() {
+    buildTweaksMarkup();
+    applyShareLockdown();
+    wireEvents();
+    setMode('prototype');
+    syncBarOffset(false);
+
+    if (isShare) {
+      try {
+        const v = validateSpec(window.__BAKED_SPEC__ || DEFAULT_SPEC);
+        spec.meta = v.meta; spec.screens = v.screens;
+        if (spec.screens.length) currentScr = spec.screens[0].id;
+        syncDescButtons();
+      } catch (e) { console.error('share validate failed', e); }
+    } else {
+      loadPrototype().then(loaded => { if (!loaded) restoreDomSnapshot(); });
+      loadSpec().then(v => {
+        spec.meta = v.meta; spec.screens = v.screens;
+        if (spec.screens.length) currentScr = spec.screens[0].id;
+        syncDescButtons();
+        if (isDescOpen()) { renderMeta(); renderTabs(); renderDescBody(); }
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+</head>
+<body class="font-pretendard text-ink-900 bg-white">
+
+<div id="app-shell">
+
+<!-- [COMMON] GNB -->
+<header data-section-id="H00" data-section-name="Global Nav" class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-ink-100" style="position:relative">
+  <nav class="max-w-7xl mx-auto px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="./Index.html" class="flex items-center gap-2">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M16 2L4 7v9c0 7.5 5.1 13.5 12 14 6.9-.5 12-6.5 12-14V7l-12-5z" fill="url(#shield-g)"></path>
+        <path d="M11 16l3.5 3.5L21 12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        <defs><linearGradient id="shield-g" x1="0" y1="0" x2="32" y2="32"><stop offset="0%" stop-color="#3B82F6"></stop><stop offset="100%" stop-color="#1E40AF"></stop></linearGradient></defs>
+      </svg>
+      <span class="text-lg font-bold tracking-tight">안전<span class="text-brand-600">NOW</span></span>
+    </a>
+    <ul class="hidden lg:flex items-center gap-8 text-sm font-medium text-ink-700">
+      <li><a href="./FUN_shared_planner.html" class="hover:text-brand-600 transition">기능 소개</a></li>
+      <li><a href="./PRC_shared_planner.html" class="text-brand-600 font-bold">가격 안내</a></li>
+      <li><a href="./EXP_shared_planner.html" class="hover:text-brand-600 transition">도입 사례</a></li>
+      <li class="relative group">
+        <button class="flex items-center gap-1 hover:text-brand-600 transition">고객 지원
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+        </button>
+        <div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
+          <div class="bg-white rounded-xl shadow-card border border-ink-100 py-2 min-w-[160px]">
+            <a href="./ASK_shared_planner.html" class="block px-4 py-2 text-sm hover:bg-ink-50">도입 문의하기</a>
+            <a href="./IRD_intro_shared_planner.html" class="block px-4 py-2 text-sm hover:bg-ink-50">소개자료</a>
+            <a href="./FAQ_shared_planner.html" class="block px-4 py-2 text-sm hover:bg-ink-50">FAQ</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="flex items-center gap-3">
+      <a href="https://safenow.co.kr/mber/support/login/login" class="text-sm font-medium text-ink-700 hover:text-brand-600 transition">로그인</a>
+
+      <a href="./FRE_shared_planner.html" class="hidden lg:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-accent-500 text-white text-sm font-semibold shadow-cta hover:bg-accent-600 transition">
+        무료 체험 신청 하기
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+      </a>
+
+      <button id="mobile-menu-toggle" type="button" class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-ink-700 hover:bg-ink-50 hover:text-brand-600 transition" aria-label="메뉴 열기" aria-controls="mobile-side-menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- Mobile Side Menu -->
+<div id="mobile-menu-backdrop" class="lg:hidden fixed inset-0 z-[60] bg-ink-900/50 opacity-0 invisible transition-opacity duration-300" aria-hidden="true"></div>
+
+<aside id="mobile-side-menu" class="lg:hidden fixed top-0 right-0 z-[70] h-full w-[85%] max-w-[320px] bg-white shadow-2xl translate-x-full transition-transform duration-300 ease-in-out flex flex-col" role="dialog" aria-modal="true" aria-labelledby="mobile-menu-title">
+  <div class="flex items-center justify-between px-5 h-16 border-b border-ink-100">
+    <a href="./Index.html" class="flex items-center gap-2" aria-label="안전NOW 홈" id="mobile-menu-title">
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+        <path d="M16 2L4 7v9c0 7.5 5.1 13.5 12 14 6.9-.5 12-6.5 12-14V7l-12-5z" fill="url(#shield-g-m)"></path>
+        <path d="M11 16l3.5 3.5L21 12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        <defs>
+          <linearGradient id="shield-g-m" x1="0" y1="0" x2="32" y2="32">
+            <stop offset="0%" stop-color="#3B82F6"></stop>
+            <stop offset="100%" stop-color="#1E40AF"></stop>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span class="text-lg font-bold tracking-tight">안전<span class="text-brand-600">NOW</span></span>
+    </a>
+    <button id="mobile-menu-close" type="button" class="inline-flex items-center justify-center w-10 h-10 rounded-lg text-ink-700 hover:bg-ink-50 hover:text-brand-600 transition" aria-label="메뉴 닫기">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+
+  <nav class="flex-1 overflow-y-auto px-2 py-4" aria-label="모바일 주요 메뉴">
+    <ul class="flex flex-col">
+      <li>
+        <a href="./FUN_shared_planner.html" class="mobile-nav-link block px-4 py-3 text-base font-semibold text-ink-900 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition">기능 소개</a>
+      </li>
+      <li>
+        <a href="./PRC_shared_planner.html" class="mobile-nav-link block px-4 py-3 text-base font-semibold text-brand-600 bg-brand-50 rounded-lg transition">가격 안내</a>
+      </li>
+      <li>
+        <a href="./EXP_shared_planner.html" class="mobile-nav-link block px-4 py-3 text-base font-semibold text-ink-900 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition">도입 사례</a>
+      </li>
+
+      <li class="mt-2">
+        <div class="px-4 pt-3 pb-1 text-xs font-semibold text-ink-400 uppercase tracking-wider">고객 지원</div>
+        <ul class="flex flex-col">
+          <li><a href="./ASK_shared_planner.html" class="mobile-nav-link block px-4 py-3 text-sm text-ink-700 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition">도입 문의하기</a></li>
+          <li><a href="./IRD_intro_shared_planner.html" class="mobile-nav-link block px-4 py-3 text-sm text-ink-700 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition">소개자료</a></li>
+          <li><a href="./FAQ_shared_planner.html" class="mobile-nav-link block px-4 py-3 text-sm text-ink-700 hover:bg-brand-50 hover:text-brand-600 rounded-lg transition">FAQ</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="px-5 py-4 border-t border-ink-100">
+    <a href="./FRE_shared_planner.html" class="mobile-nav-link w-full inline-flex items-center justify-center gap-1.5 px-4 py-3 rounded-lg bg-accent-500 text-white text-sm font-semibold shadow-cta hover:bg-accent-600 transition">
+      무료 체험 신청 하기
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </a>
+  </div>
+</aside>
+
+<main>
+
+<!-- S01 Hero -->
+<section data-section-id="S01" data-section-name="Hero" class="hero-bg relative overflow-hidden" style="position:relative">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-16 lg:pt-20 lg:pb-20">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+      <!-- 좌측 : 헤드라인 + CTA -->
+      <div class="">
+        
+        <h1 class="text-4xl lg:text-5xl font-extrabold leading-[1.2] tracking-tight mb-5">
+          규모에 딱 맞는<br><span class="text-brand-700">합리적인 가격</span>
+        </h1>
+        <p class="text-lg text-ink-500 leading-relaxed mb-8">
+          우리 회사의 근로자 수를 선택하면<br>
+          최적의 요금제를 안내해 드립니다.
+        </p>
+
+        <!-- 신뢰 지표 -->
+        
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="./FRE_shared_planner.html" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-accent-500 text-white font-semibold shadow-cta hover:bg-accent-600 transition">
+            무료 체험 신청 하기
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </a>
+          <a href="./ASK_shared_planner.html" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white border border-ink-300 text-ink-900 font-semibold hover:border-brand-500 hover:text-brand-700 transition">도입 문의하기</a>
+        </div>
+      </div>
+
+      <!-- 우측 : Hero 일러스트 (가격 테마) -->
+      <!-- [ILLUSTRATION PLACEHOLDER] 다우오피스 스타일의 가격 / 기업 규모 일러스트
+           - 3개 크기의 빌딩(소기업·중소기업·대기업)이 나란히 서 있는 모습
+           - 위에 가격 태그·할인 배지 장식 -->
+      <div class="relative aspect-[4/3.2] rounded-3xl bg-gradient-to-br from-white to-brand-50 shadow-card p-8 overflow-hidden">
+        <!-- 배경 장식 -->
+        <svg class="absolute top-0 right-0 opacity-40" width="200" height="200" viewBox="0 0 200 200" fill="none">
+          <circle cx="160" cy="40" r="60" fill="#DBEAFE"></circle>
+          <circle cx="180" cy="150" r="30" fill="#FED7AA"></circle>
+        </svg>
+
+        <!-- 메인 일러스트 : 3단 규모 빌딩 + 가격표 -->
+        <div class="relative z-10 flex items-end justify-center gap-6 h-full pb-4">
+
+          <!-- 소기업 빌딩 (작음) -->
+          <div class="flex flex-col items-center">
+            <div class="bg-white rounded-lg shadow-sm px-3 py-1.5 mb-3 border border-brand-200">
+              <div class="text-[10px] text-brand-600 font-bold">₩120K</div>
+            </div>
+            <svg width="80" height="110" viewBox="0 0 80 110" fill="none" class="">
+              <!-- 빌딩 몸체 -->
+              <rect x="12" y="40" width="56" height="65" rx="4" fill="#93C5FD"></rect>
+              <rect x="12" y="40" width="56" height="8" fill="#60A5FA"></rect>
+              <!-- 창문 -->
+              <rect x="20" y="56" width="10" height="10" rx="1" fill="#EFF6FF"></rect>
+              <rect x="35" y="56" width="10" height="10" rx="1" fill="#EFF6FF"></rect>
+              <rect x="50" y="56" width="10" height="10" rx="1" fill="#EFF6FF"></rect>
+              <rect x="20" y="72" width="10" height="10" rx="1" fill="#EFF6FF"></rect>
+              <rect x="35" y="72" width="10" height="10" rx="1" fill="#EFF6FF"></rect>
+              <rect x="50" y="72" width="10" height="10" rx="1" fill="#EFF6FF"></rect>
+              <!-- 문 -->
+              <rect x="33" y="88" width="14" height="17" rx="1" fill="#2563EB"></rect>
+              <!-- 라벨 -->
+              <text x="40" y="30" text-anchor="middle" font-size="9" font-weight="700" fill="#1E40AF">START</text>
+            </svg>
+          </div>
+
+          <!-- 중소기업 빌딩 (중간, 강조) -->
+          <div class="flex flex-col items-center relative">
+            <!-- POPULAR 배지 -->
+            <div class="absolute -top-2 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-full bg-accent-500 text-white text-[9px] font-bold z-10 whitespace-nowrap shadow-sm">⭐ POPULAR</div>
+            <div class="bg-white rounded-lg shadow-md px-3 py-1.5 mb-3 mt-3 border-2 border-accent-500">
+              <div class="text-[10px] text-accent-600 font-bold">₩190K</div>
+            </div>
+            <svg width="100" height="150" viewBox="0 0 100 150" fill="none">
+              <!-- 빌딩 몸체 -->
+              <rect x="15" y="35" width="70" height="110" rx="4" fill="#FDBA74"></rect>
+              <rect x="15" y="35" width="70" height="10" fill="#F97316"></rect>
+              <!-- 창문 격자 -->
+              <g fill="#FFF7ED">
+                <rect x="23" y="52" width="10" height="10" rx="1"></rect>
+                <rect x="38" y="52" width="10" height="10" rx="1"></rect>
+                <rect x="53" y="52" width="10" height="10" rx="1"></rect>
+                <rect x="68" y="52" width="10" height="10" rx="1"></rect>
+                <rect x="23" y="68" width="10" height="10" rx="1"></rect>
+                <rect x="38" y="68" width="10" height="10" rx="1"></rect>
+                <rect x="53" y="68" width="10" height="10" rx="1"></rect>
+                <rect x="68" y="68" width="10" height="10" rx="1"></rect>
+                <rect x="23" y="84" width="10" height="10" rx="1"></rect>
+                <rect x="38" y="84" width="10" height="10" rx="1"></rect>
+                <rect x="53" y="84" width="10" height="10" rx="1"></rect>
+                <rect x="68" y="84" width="10" height="10" rx="1"></rect>
+                <rect x="23" y="100" width="10" height="10" rx="1"></rect>
+                <rect x="38" y="100" width="10" height="10" rx="1"></rect>
+                <rect x="53" y="100" width="10" height="10" rx="1"></rect>
+                <rect x="68" y="100" width="10" height="10" rx="1"></rect>
+              </g>
+              <!-- 문 -->
+              <rect x="42" y="125" width="16" height="20" rx="1" fill="#EA580C"></rect>
+              <!-- 라벨 -->
+              <text x="50" y="28" text-anchor="middle" font-size="9" font-weight="700" fill="#C2410C" class="">GROWTH</text>
+            </svg>
+          </div>
+
+          <!-- 대기업 빌딩 (큰 높이) -->
+          <div class="flex flex-col items-center">
+            <div class="bg-white rounded-lg shadow-sm px-3 py-1.5 mb-3 border border-ink-300">
+              <div class="text-[10px] text-ink-700 font-bold">₩1.6M</div>
+            </div>
+            <svg width="90" height="180" viewBox="0 0 90 180" fill="none">
+              <!-- 빌딩 몸체 -->
+              <rect x="12" y="20" width="66" height="155" rx="4" fill="#64748B" class=""></rect>
+              <rect x="12" y="20" width="66" height="10" fill="#334155"></rect>
+              <!-- 안테나 -->
+              <rect x="43" y="8" width="4" height="14" fill="#334155"></rect>
+              <circle cx="45" cy="8" r="3" fill="#F97316"></circle>
+              <!-- 창문 격자 -->
+              <g fill="#F1F5F9">
+                <rect x="20" y="38" width="8" height="8" rx="1"></rect>
+                <rect x="32" y="38" width="8" height="8" rx="1"></rect>
+                <rect x="44" y="38" width="8" height="8" rx="1"></rect>
+                <rect x="56" y="38" width="8" height="8" rx="1"></rect>
+                <rect x="20" y="52" width="8" height="8" rx="1"></rect>
+                <rect x="32" y="52" width="8" height="8" rx="1"></rect>
+                <rect x="44" y="52" width="8" height="8" rx="1"></rect>
+                <rect x="56" y="52" width="8" height="8" rx="1"></rect>
+                <rect x="20" y="66" width="8" height="8" rx="1"></rect>
+                <rect x="32" y="66" width="8" height="8" rx="1"></rect>
+                <rect x="44" y="66" width="8" height="8" rx="1"></rect>
+                <rect x="56" y="66" width="8" height="8" rx="1"></rect>
+                <rect x="20" y="80" width="8" height="8" rx="1"></rect>
+                <rect x="32" y="80" width="8" height="8" rx="1"></rect>
+                <rect x="44" y="80" width="8" height="8" rx="1"></rect>
+                <rect x="56" y="80" width="8" height="8" rx="1"></rect>
+                <rect x="20" y="94" width="8" height="8" rx="1"></rect>
+                <rect x="32" y="94" width="8" height="8" rx="1"></rect>
+                <rect x="44" y="94" width="8" height="8" rx="1"></rect>
+                <rect x="56" y="94" width="8" height="8" rx="1"></rect>
+                <rect x="20" y="108" width="8" height="8" rx="1"></rect>
+                <rect x="32" y="108" width="8" height="8" rx="1"></rect>
+                <rect x="44" y="108" width="8" height="8" rx="1"></rect>
+                <rect x="56" y="108" width="8" height="8" rx="1"></rect>
+                <rect x="20" y="122" width="8" height="8" rx="1"></rect>
+                <rect x="32" y="122" width="8" height="8" rx="1"></rect>
+                <rect x="44" y="122" width="8" height="8" rx="1"></rect>
+                <rect x="56" y="122" width="8" height="8" rx="1"></rect>
+                <rect x="20" y="136" width="8" height="8" rx="1"></rect>
+                <rect x="32" y="136" width="8" height="8" rx="1"></rect>
+                <rect x="44" y="136" width="8" height="8" rx="1"></rect>
+                <rect x="56" y="136" width="8" height="8" rx="1"></rect>
+              </g>
+              <!-- 문 -->
+              <rect x="37" y="155" width="16" height="20" rx="1" fill="#1E293B"></rect>
+              <!-- 라벨 -->
+              <text x="45" y="178" text-anchor="start" font-size="9" font-weight="700" fill="#334155" opacity="0">ENTERPRISE</text>
+            </svg>
+          </div>
+
+        </div>
+
+        <!-- 플로팅 카드 1 : 근로자 수 -->
+        <div class="absolute top-6 left-6 bg-white rounded-xl shadow-card-hover p-3 flex items-center gap-2.5 border border-ink-100">
+          <div class="w-9 h-9 rounded-lg bg-brand-100 flex items-center justify-center">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="6" cy="6" r="3" fill="#2563EB"></circle><circle cx="12" cy="6" r="3" fill="#60A5FA"></circle><path d="M2 15c0-2 1.8-4 4-4s4 2 4 4" stroke="#2563EB" stroke-width="1.5" fill="none"></path><path d="M8 15c0-2 1.8-4 4-4s4 2 4 4" stroke="#60A5FA" stroke-width="1.5" fill="none"></path></svg>
+          </div>
+          <div>
+            <div class="text-[11px] text-ink-500">근로자 수</div>
+            <div class="text-xs font-bold">맞춤 요금제</div>
+          </div>
+        </div>
+
+        <!-- 플로팅 카드 2 : 할인 혜택 -->
+        <div class="absolute bottom-10 right-4 bg-white rounded-xl shadow-card-hover p-3 border border-ink-100">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l1.5 4h4L9 7.5l1.5 4L7 9l-3.5 2.5L5 7.5 1.5 5h4L7 1z" fill="#EF4444"></path></svg>
+            </div>
+            <div>
+              <div class="text-[11px] text-ink-500">신규 도입시</div>
+              <div class="text-xs font-bold text-red-500">최대 40% 할인</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- S02 가격 안내 : 슬라이더 + 카드 -->
+<section data-section-id="S02" data-section-name="Pricing Slider" class="py-20 bg-white" style="position:relative">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+
+    <div class="text-center mb-12">
+      <h2 class="text-3xl lg:text-4xl font-extrabold mb-3">귀사의 근로자는 <span class="text-brand-600">몇 명</span>인가요?</h2>
+      <p class="text-ink-500">슬라이더를 움직여 근로자 수에 맞는 요금제를 확인하세요.</p>
+    </div>
+
+    <div class="max-w-3xl mx-auto mb-16">
+      <div class="text-center mb-8">
+        <div class="inline-block px-6 py-3 bg-brand-600 text-white rounded-xl shadow-lg">
+          <span class="text-sm">선택된 근로자 수</span>
+          <span id="worker-count" class="ml-2 text-2xl font-bold">1~30</span>
+          <span class="text-sm">명</span>
+        </div>
+      </div>
+      <div class="relative px-2">
+        <input type="range" id="worker-slider" min="0" max="7" value="0" step="1" class="w-full">
+        <div class="flex justify-between mt-3 text-xs text-ink-500 font-medium">
+          <span style="flex-basis:12.5%;text-align:center">1</span>
+          <span style="flex-basis:12.5%;text-align:center">31</span>
+          <span style="flex-basis:12.5%;text-align:center">51</span>
+          <span style="flex-basis:12.5%;text-align:center">101</span>
+          <span style="flex-basis:12.5%;text-align:center">201</span>
+          <span style="flex-basis:12.5%;text-align:center">301</span>
+          <span style="flex-basis:12.5%;text-align:center">501</span>
+          <span style="flex-basis:12.5%;text-align:center">1000+</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- 소기업, 스타트업 : 1명 -->
+      <div id="card-small" class="bg-white rounded-2xl p-7 border border-ink-200 transition-all relative">
+        
+        <h3 class="text-xl font-extrabold mb-1">소기업·스타트업에<br>추천해요</h3>
+        <p class="text-sm text-ink-500 mb-6">1~50명 근로자 사업장</p>
+        <div class="flex items-baseline gap-1 mb-1">
+          <span class="text-4xl font-extrabold">120,000</span>
+          <span class="text-ink-500">원/월</span>
+        </div>
+        <div class="text-xs text-ink-500 mb-6">VAT 별도</div>
+        <ul class="space-y-2.5 text-sm mb-7">
+          <li class="flex gap-2"><span class="text-brand-600">✓</span> 사업장 1개 등록</li>
+          <li class="flex gap-2"><span class="text-brand-600">✓</span> 근로자 50명까지</li>
+          
+          
+          <li class="flex gap-2"><span class="text-brand-600">✓</span>전 기능 이용 가능</li>
+        </ul>
+        <a href="./FRE_shared_planner.html" class="inline-flex items-center justify-center gap-2 w-full px-4 py-3 rounded-xl border-2 border-ink-900 font-semibold hover:bg-ink-900 hover:text-white transition">
+          무료 체험 신청 하기
+          
+        </a>
+      </div>
+
+      <!-- 중소기업 : 31~300 -->
+      <div id="card-medium" class="pricing-recommended bg-white rounded-2xl p-7 relative shadow-card-hover ring-4 ring-accent-500 ring-offset-2 border-2 border-transparent">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-gradient-to-r from-brand-600 to-accent-500 text-white text-xs font-bold shadow-md">⭐ 가장 많이 선택</div>
+        
+        <h3 class="text-xl font-extrabold mb-1">중소기업에<br>추천해요</h3>
+        <p class="text-sm text-ink-500 mb-6">51~200명 근로자 사업장</p>
+        <div class="flex items-baseline gap-1 mb-1">
+          <span id="price-medium" class="text-4xl font-extrabold">360,000</span>
+          <span class="text-ink-500">원/월</span>
+        </div>
+        <div class="text-xs text-ink-500 mb-6">VAT 별도&nbsp;</div>
+        <ul class="space-y-2.5 text-sm mb-7">
+          <li class="flex gap-2"><span class="text-accent-500">✓</span>사업장 무제한</li>
+          <li class="flex gap-2"><span class="text-accent-500">✓</span>근로자 200명까지</li>
+          <li class="flex gap-2"><span class="text-accent-500">✓</span> 전 기능 이용 가능</li>
+          
+          
+        </ul>
+        <a href="https://safenow.co.kr/mber/support/join/join/step1" class="block w-full text-center px-4 py-3 rounded-xl bg-accent-500 text-white font-semibold shadow-cta hover:bg-accent-600 transition">시작하기</a>
+      </div>
+
+      <!-- 중견·대기업 : 301~999 -->
+      <div id="card-large" class="bg-ink-900 rounded-2xl p-7 text-white relative overflow-hidden border-2 border-transparent">
+        <div class="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-brand-600/30 blur-3xl"></div>
+        <div class="relative">
+          
+          <h3 class="text-xl font-extrabold mb-1">중견·대기업에<br>추천해요</h3>
+          <p class="text-sm text-ink-300 mb-6">201명 이상 근로자 사업장</p>
+          <div class="flex items-baseline gap-1 mb-1">
+            <span id="price-large" class="text-4xl font-extrabold">960,000</span>
+            <span class="text-ink-300">원/월</span>
+          </div>
+          <div class="text-xs text-ink-300 mb-6">VAT 별도&nbsp;</div>
+          <ul class="space-y-2.5 text-sm mb-7">
+            <li class="flex gap-2"><span class="text-brand-300">✓</span> 사업장 무제한</li>
+            <li class="flex gap-2" id="large-worker-limit"><span class="text-brand-300">✓</span> 근로자 1000명까지</li><li class="flex gap-2"><span class="text-brand-300">✓</span>전 기능 이용 가능</li>
+            
+            
+            
+          </ul>
+          <div id="cta-large" class="space-y-2"><a href="https://safenow.co.kr/mber/support/join/join/step1" class="block w-full text-center px-4 py-3 rounded-xl bg-white text-ink-900 font-semibold hover:bg-ink-100 transition">시작하기</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- S03 도입 혜택 -->
+<section data-section-id="S03" data-section-name="Benefits" class="py-20 bg-ink-50" style="position:relative">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+    <div class="text-center mb-12">
+      
+      <h2 class="text-3xl lg:text-4xl font-extrabold mb-3">도입 시 받을 수 있는 <span class="text-green-600">다양한 혜택</span></h2>
+      <p class="text-ink-500">장기 계약·다수 사업장 등록 시 더 큰 혜택을 제공합니다.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- 혜택 카드 1 -->
+      <div class="bg-white rounded-2xl p-7 border border-ink-100 shadow-sm relative overflow-hidden">
+        <div class="absolute top-0 right-0 px-3 py-1 bg-red-500 text-white text-[10px] font-bold rounded-bl-lg">신규 고객</div>
+        <div class="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center mb-4">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.5 6H21l-5 4 2 7-6-4-6 4 2-7-5-4h6.5L12 2z" fill="#EF4444"></path></svg>
+        </div>
+        <h4 class="text-lg font-extrabold mb-2">신규 고객 특별 할인</h4>
+        <div class="text-3xl font-black text-red-500 mb-3">최대 40% OFF</div>
+        <p class="text-sm text-ink-500 leading-relaxed">첫 계약 시 최대 40% 할인된 가격으로 안전NOW를 시작할 수 있습니다.</p>
+      </div>
+
+      <!-- 혜택 카드 2 -->
+      <div class="bg-white rounded-2xl p-7 border border-ink-100 shadow-sm">
+        <div class="w-12 h-12 rounded-xl bg-brand-100 flex items-center justify-center mb-4">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 4h18v4H3V4zm0 6h18v10H3V10z" fill="#2563EB"></path></svg>
+        </div>
+        <h4 class="text-lg font-extrabold mb-2">장기 계약 할인</h4>
+        <div class="text-3xl font-black text-brand-600 mb-3">최대 15% OFF</div>
+        <p class="text-sm text-ink-500 leading-relaxed">12개월 이상 연 결제 시 월 사용료 15% 추가 할인을 적용합니다.</p>
+      </div>
+
+      <!-- 혜택 카드 3 -->
+      <div class="bg-white rounded-2xl p-7 border border-ink-100 shadow-sm">
+        <div class="w-12 h-12 rounded-xl bg-orange-100 flex items-center justify-center mb-4">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" fill="#F97316"></rect></svg>
+        </div>
+        <h4 class="text-lg font-extrabold mb-2">다수 사업장 할인</h4>
+        <div class="text-3xl font-black text-accent-500 mb-3">최대 50% OFF</div>
+        <p class="text-sm text-ink-500 leading-relaxed">다수 사업장 동시 가입 시 사업장 수에 따라 추가 할인을 제공합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S04 제공 기능 : 타사 비교 표 -->
+<section data-section-id="S04" data-section-name="Comparison" class="py-20 bg-white" style="position:relative">
+  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+    <div class="text-center mb-12">
+      
+      <h2 class="text-3xl lg:text-4xl font-extrabold mb-3">다른 서비스와 무엇이 다를까요?</h2>
+      <p class="text-ink-500">안전NOW는 중대재해처벌법 특화 기능을 표준으로 제공합니다.</p>
+    </div>
+
+    <div class="overflow-x-auto rounded-2xl border border-ink-100 shadow-card">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="bg-ink-50 border-b border-ink-100">
+            <th class="text-left px-6 py-4 font-bold text-ink-700 min-w-[240px]">제공 기능</th>
+            <th class="px-4 py-4 text-center">
+              <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-brand-600 text-white font-bold">
+                <svg width="14" height="14" viewBox="0 0 32 32" fill="none"><path d="M16 2L4 7v9c0 7.5 5.1 13.5 12 14 6.9-.5 12-6.5 12-14V7l-12-5z" fill="white"></path><path d="M11 16l3.5 3.5L21 12" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round"></path></svg>
+                안전NOW
+              </div>
+            </th>
+            <th class="px-4 py-4 text-center font-bold text-ink-700">A사</th>
+            <th class="px-4 py-4 text-center font-bold text-ink-700">B사</th>
+            <th class="px-4 py-4 text-center font-bold text-ink-700">C사</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-ink-100">
+          <tr class="hover:bg-ink-50/50">
+            <td class="px-6 py-4 font-semibold">중대재해처벌법 대응 전용</td>
+            <td class="text-center"><span class="inline-flex w-6 h-6 rounded-full bg-brand-100 text-brand-700 items-center justify-center font-bold">✓</span></td>
+            <td class="text-center text-red-500 font-bold">✕</td>
+            <td class="text-center"><span class="inline-flex w-6 h-6 rounded-full bg-ink-100 text-ink-500 items-center justify-center">✓</span></td>
+            <td class="text-center text-red-500 font-bold">✕</td>
+          </tr>
+          <tr class="hover:bg-ink-50/50">
+            <td class="px-6 py-4 font-semibold">전자문서 자동 분류</td>
+            <td class="text-center"><span class="inline-flex w-6 h-6 rounded-full bg-brand-100 text-brand-700 items-center justify-center font-bold">✓</span></td>
+            <td class="text-center text-red-500 font-bold">✕</td>
+            <td class="text-center text-red-500 font-bold">✕</td>
+            <td class="text-center text-red-500 font-bold">✕</td>
+          </tr>
+          <tr class="hover:bg-ink-50/50">
+            <td class="px-6 py-4 font-semibold">타임스탬프 기반 증빙</td>
+            <td class="text-center"><span class="inline-flex w-6 h-6 rounded-full bg-brand-100 text-brand-700 items-center justify-center font-bold">✓</span></td>
+            <td class="text-center text-red-500 font-bold">✕</td>
+            <td class="text-center text-red-500 font-bold">✕</td>
+            <td class="text-center text-red-500 font-bold">✕</td>
+          </tr>
+          <tr class="hover:bg-ink-50/50">
+            <td class="px-6 py-4 font-semibold">알림톡 자동 리마인드</td>
+            <td class="text-center"><span class="inline-flex w-6 h-6 rounded-full bg-brand-100 text-brand-700 items-center justify-center font-bold">✓</span></td>
+            <td class="text-center"><span class="inline-flex w-6 h-6 rounded-full bg-ink-100 text-ink-500 items-center justify-center">✓</span></td>
+            <td class="text-center text-red-500 font-bold">✕</td>
+            <td class="text-center"><span class="inline-flex w-6 h-6 rounded-full bg-ink-100 text-ink-500 items-center justify-center">✓</span></td>
+          </tr>
+          <tr class="hover:bg-ink-50/50">
+            <td class="px-6 py-4 font-semibold">위험성 평가 법정 템플릿</td>
+            <td class="text-center"><span class="inline-flex w-6 h-6 rounded-full bg-brand-100 text-brand-700 items-center justify-center font-bold">✓</span></td>
+            <td class="text-center"><span class="inline-flex w-6 h-6 rounded-full bg-ink-100 text-ink-500 items-center justify-center">✓</span></td>
+            <td class="text-center text-red-500 font-bold">✕</td>
+            <td class="text-center text-red-500 font-bold">✕</td>
+          </tr>
+          <tr class="hover:bg-ink-50/50">
+            <td class="px-6 py-4 font-semibold">TBM 모바일 전자서명</td>
+            <td class="text-center"><span class="inline-flex w-6 h-6 rounded-full bg-brand-100 text-brand-700 items-center justify-center font-bold">✓</span></td>
+            <td class="text-center text-red-500 font-bold">✕</td>
+            <td class="text-center"><span class="inline-flex w-6 h-6 rounded-full bg-ink-100 text-ink-500 items-center justify-center">✓</span></td>
+            <td class="text-center text-red-500 font-bold">✕</td>
+          </tr>
+          <tr class="hover:bg-ink-50/50">
+            <td class="px-6 py-4 font-semibold">도급업체 관리</td>
+            <td class="text-center"><span class="inline-flex w-6 h-6 rounded-full bg-brand-100 text-brand-700 items-center justify-center font-bold">✓</span></td>
+            <td class="text-center text-red-500 font-bold">✕</td>
+            <td class="text-center text-red-500 font-bold">✕</td>
+            <td class="text-center"><span class="inline-flex w-6 h-6 rounded-full bg-ink-100 text-ink-500 items-center justify-center">✓</span></td>
+          </tr>
+          <tr class="hover:bg-ink-50/50">
+            <td class="px-6 py-4 font-semibold">전직 수사팀장 설계 기반</td>
+            <td class="text-center"><span class="inline-flex w-6 h-6 rounded-full bg-accent-500 text-white items-center justify-center font-bold">★</span></td>
+            <td class="text-center text-red-500 font-bold">✕</td>
+            <td class="text-center text-red-500 font-bold">✕</td>
+            <td class="text-center text-red-500 font-bold">✕</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<!-- <section data-section-id="S05" data-section-name="CTA" class="py-16 bg-gradient-to-br from-brand-800 to-brand-900 text-white" style="position:relative">
+  
+</section> -->
+
+</main>
+
+<!-- [COMMON] FTR -->
+<footer data-section-id="F00" data-section-name="Footer" class="bg-ink-900 text-ink-300 py-16" style="position: relative;">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+    <div class="grid lg:grid-cols-3 gap-10 pb-10 border-b border-white/10">
+      <!-- 슬로건 -->
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-2 mb-4">
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+            <path d="M16 2L4 7v9c0 7.5 5.1 13.5 12 14 6.9-.5 12-6.5 12-14V7l-12-5z" fill="url(#ftr-g)"></path>
+            <path d="M11 16l3.5 3.5L21 12" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <defs>
+              <linearGradient id="ftr-g" x1="0" y1="0" x2="32" y2="32">
+                <stop offset="0%" stop-color="#60A5FA"></stop>
+                <stop offset="100%" stop-color="#3B82F6"></stop>
+              </linearGradient>
+            </defs>
+          </svg>
+          <span class="text-xl font-bold text-white">안전<span class="text-brand-400">NOW</span></span>
+        </div>
+        <p class="text-2xl lg:text-3xl font-extrabold text-white leading-snug max-w-lg"><span class="text-accent-500"><font color="#ffffff" class="">수백 개의 서류를&nbsp;</font>단 하나</span>의 시스템으로</p><p class="text-2xl lg:text-3xl font-extrabold text-white leading-snug max-w-lg">당신의 책임을 <span class="text-accent-500">확실한 증거</span>로 바꿉니다.
+        </p>
+      </div>
+
+      <!-- CTA 박스 -->
+      <div class="flex flex-col gap-3 justify-end">
+        <a href="./FRE_shared_planner.html" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-accent-500 text-white font-semibold hover:bg-accent-600 transition" target="_blank" rel="noopener noreferrer">
+          무료 체험 신청 하기
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" class=""><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+        </a>
+        <a href="./ASK_shared_planner.html" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 border border-white/20 text-white font-semibold hover:bg-white/20 transition">
+          도입 문의하기
+        </a>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 py-10 text-sm">
+      <div class="">
+        <div class="text-xs text-ink-500 mb-2">회사</div>
+        <div class="text-white font-bold">(주)다온플레이스</div>
+      </div><div class="">
+        <div class="text-xs text-ink-500 mb-2">대표</div>
+        <div class="text-white font-bold">박주현</div>
+      </div>
+      <div class="">
+        <div class="text-xs text-ink-500 mb-2">주소</div>
+        <div class="">전남 나주시 우정로 56, B 204호</div>
+      </div>
+      <div class="">
+        <div class="text-xs text-ink-500 mb-2">연락처</div>
+        <div class="">061-820-8070</div>
+        <div class="">info@daonplace.com</div>
+      </div>
+      
+    </div><div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pt-6 border-t border-white/10 text-sm">
+      <div class="text-ink-500">© 2026 (주)다온플레이스. All rights reserved.</div>
+      <div class="flex items-center gap-6">
+        <a href="https://safenow.co.kr/mber/support/prvplc/cntnts/2/view" class="hover:text-white transition" target="_blank" rel="noopener noreferrer">개인정보 처리방침</a>
+        <a href="https://safenow.co.kr/mber/support/trmuse/cntnts/1/view" class="hover:text-white transition" target="_blank" rel="noopener noreferrer">이용약관</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</div><!-- /#app-shell -->
+
+</body></html>
